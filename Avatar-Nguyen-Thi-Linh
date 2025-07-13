@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BẢNG PHÁC THẢO CHÂN DUNG KHÁCH HÀNG: LINH (Version 2.2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .canvas-textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background-color: transparent;
+            resize: none;
+            color: #1f2937;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-y: auto; 
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+            background-size: 18px 18px;
+            min-height: 120px;
+        }
+        .canvas-textarea:focus {
+            outline: 2px solid #4f46e5;
+            background-color: rgba(239, 246, 255, 0.8);
+            border-radius: 4px;
+        }
+
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none; }
+            .printable-canvas { box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 100% !important; border: none; }
+            .canvas-textarea { color: #000 !important; background-color: transparent !important; }
+        }
+        
+        .canvas-input {
+            width: 100%;
+            border-bottom: 1px solid #9ca3af;
+            background-color: transparent;
+            padding: 2px 0;
+        }
+        .canvas-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        /* Custom styles for the JTBD grid */
+        .jtbd-grid-container {
+            @apply grid grid-cols-1 lg:grid-cols-3 border-t border-l border-gray-400;
+        }
+        .jtbd-col {
+            @apply border-b border-r border-gray-400 flex flex-col;
+        }
+        .jtbd-col-header {
+            @apply bg-gray-200 p-2 text-center font-bold text-gray-700 text-lg;
+        }
+        .jtbd-section-header {
+            @apply p-2 font-semibold text-gray-600 border-b border-gray-300;
+        }
+        .jtbd-list {
+            @apply text-sm text-gray-700 list-disc list-inside p-4 space-y-1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                    <div class="text-xl sm:text-2xl font-extrabold text-orange-600">
+                        FLOWMAKER<span class="align-top text-base sm:text-lg font-normal">™</span>
+                    </div>
+                </a>
+                
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base bg-indigo-600 text-white font-semibold px-3 py-2 sm:px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    Về Website Chính
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-8 px-4">
+        <div class="printable-canvas container mx-auto max-w-5xl bg-white p-4 sm:p-6 border border-gray-300 shadow-lg rounded-lg">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b pb-4">
+                <h1 class="text-xl lg:text-2xl font-bold text-gray-800 tracking-wider flex items-center">
+                    BẢNG PHÁC THẢO CHÂN DUNG KHÁCH HÀNG 
+                    <span class="ml-3 px-2 py-1 bg-gray-200 text-gray-700 text-xs font-semibold rounded-full">Version #2.2</span>
+                </h1>
+                <div class="text-xs text-gray-600 mt-4 sm:mt-0 w-full sm:w-auto">
+                    <div class="flex items-center justify-between sm:justify-end gap-4">
+                        <label for="designedFor" class="flex-shrink-0">THIẾT KẾ CHO:</label>
+                        <input type="text" id="designedFor" class="canvas-input w-2/3 sm:w-40 font-semibold" value="Linh – Chuyên gia Kinh tế Tri thức">
+                    </div>
+                    <div class="flex items-center justify-between sm:justify-end gap-4 mt-1">
+                        <label for="designedBy" class="flex-shrink-0">THIẾT KẾ BỞI:</label>
+                        <input type="text" id="designedBy" class="canvas-input w-2/3 sm:w-40" value="Lê Hữu Tuyến">
+                    </div>
+                     <div class="flex items-center justify-between sm:justify-end gap-4 mt-1">
+                        <label for="date" class="flex-shrink-0">NGÀY:</label>
+                        <input type="text" id="date" class="canvas-input w-2/3 sm:w-40" value="02/07/2025">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-6">
+                <a href="https://tuyen.co/jtbd-linh" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-base shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 -mt-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.022 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                    </svg>
+                    Xem Báo Cáo Phân Tích JTBD Chi Tiết
+                </a>
+            </div>
+
+            <div class="mb-6 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
+                <p class="text-sm text-gray-800 italic leading-relaxed">
+                    Tóm tắt chân dung: Linh – Đại diện cho các nhà sáng tạo, chuyên gia, huấn luyện viên (coach), người bán kiến thức. Nỗi đau của cô ấy là sự mâu thuẫn nội tâm giữa việc chia sẻ giá trị chân thành và áp lực phải "bán hàng" theo cách mà cô ấy không mong muốn. "Công việc" của cô ấy là biến chuyên môn và đam mê thành một doanh nghiệp có lợi nhuận một cách chân thành và tự nhiên.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-l border-gray-400">
+                
+                <!-- TRẠNG THÁI TRƯỚC Column -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                    <div class="bg-gray-200 p-2 text-center font-bold text-gray-700">
+                        TRẠNG THÁI TRƯỚC
+                        <span class="block text-xs font-medium text-gray-500">(Nỗi đau hiện tại)</span>
+                    </div>
+                    <div class="border-t border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Có:</div><textarea class="canvas-textarea" data-sync-height="have">- Có chuyên môn, sản phẩm tốt nhưng không biết cách marketing, không biết diễn đạt thành con chữ.
+- Những bài viết quảng cáo, content rời rạc, không có CTA rõ ràng, đăng bài nhưng không ai tương tác, không bán được hàng.
+- Quy trình quản lý học viên, chăm sóc cộng đồng, đặt lịch hẹn hoàn toàn thủ công, tốn thời gian.
+- Quy trình bán hàng cảm tính, không có kịch bản, lúc được lúc không.
+- Thử nhiều cách như dropshipping, MMO nhưng không ra tiền hoặc không ổn định.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Cảm Thấy:</div><textarea class="canvas-textarea" data-sync-height="feel">- Ghét cay ghét đắng kiểu marketing "chốt sale nhồi nhét", "spam inbox", thấy nó "phản cảm".
+- Sợ bị từ chối, sợ làm phiền người khác, ngại mở miệng chào mời, "không hợp với kiểu chốt sales".
+- Sợ bị đánh giá là "làm màu, sống ảo", "khoe khoang", "đa cấp, lừa đảo".
+- Loay hoay, bế tắc, cô đơn và đôi khi mất tự tin vào bản thân vì không biết bắt đầu từ đâu.
+- Xung đột nội tâm giữa việc muốn kiếm tiền và việc giữ gìn giá trị, đạo đức nghề nghiệp.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Một Ngày Bình Thường:</div><textarea class="canvas-textarea" data-sync-height="average-day">- Dành hàng giờ "vắt óc suy nghĩ" để viết content nhưng "nặn mãi không ra chữ".
+- Đăng bài thủ công, copy/paste từ nhà cung cấp lên Facebook cá nhân nhưng không có kết quả.
+- Trả lời tin nhắn hỏi giá của khách nhưng rồi "im ru, không chốt được".
+- Loay hoay với việc quản lý học viên và lịch hẹn thủ công.
+- Xem video, học lỏm trên YouTube/TikTok nhưng không áp dụng được vì "toàn nói lý thuyết suông".</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Địa Vị:</div><textarea class="canvas-textarea" data-sync-height="status">- Chỉ là một "người bán hàng" nhỏ lẻ, một chuyên gia ẩn dật "không ai biết tới".
+- Bị nhấn chìm giữa vô vàn đối thủ cạnh tranh về giá và các chiêu trò marketing.
+- Khó bán được các sản phẩm/dịch vụ giá cao vì thiếu uy tín và thương hiệu cá nhân.
+- Bị xem là một "spammer" hay "người bán hàng phiền phức" trong mắt bạn bè, người thân.</textarea></div>
+                    <div class="flex-grow flex flex-col"><div class="p-2 font-semibold text-gray-600">Cuộc Chiến Nội Tâm:</div><textarea class="canvas-textarea" data-sync-height="internal-battle">Xung đột giữa việc kiếm tiền và giữ vững giá trị bản thân:
+- Mong muốn chia sẻ giá trị một cách tử tế, có đạo đức.
+- Áp lực phải "bán hàng", "kiếm tiền" theo những cách không phù hợp với giá trị sống.
+- Sợ hãi bị đánh giá, bị xem là phiền phức.</textarea></div>
+                </div>
+
+                <!-- CHÂN DUNG / HÌNH MẪU Column -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                    <div class="border-b border-gray-400 flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">CHÂN DUNG / HÌNH MẪU</div>
+                        <textarea class="canvas-textarea flex-grow">- Tên: Nguyễn Thị Linh
+- Tuổi: 28-35
+- Chức vụ: Chuyên gia, Coach, Nhà Sáng tạo, Người dạy kỹ năng, Freelancer, Người bán sản phẩm tinh thần...
+- Mô hình: Bán kiến thức (khóa học online, coaching), sản phẩm số, sản phẩm thủ công, dịch vụ tư vấn. Thường tự làm mọi thứ (solopreneur).
+- Lĩnh vực: Phát triển bản thân, sức khỏe, tài chính cá nhân, kinh doanh online.</textarea>
+                    </div>
+                    <div class="border-b border-gray-400 flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">NHÂN KHẨU HỌC / SỞ THÍCH</div>
+                        <textarea class="canvas-textarea flex-grow">- Blogs/Websites: Các blog về xây dựng thương hiệu cá nhân, content marketing, phát triển bản thân, kinh doanh online.
+- Gurus/Influencers: Các chuyên gia về content, viết lách, xây dựng nhân hiệu (Russell Brunson, Frank Kern...).
+- Nhóm FB: Các group về Content Marketing, Viết lách, Kinh doanh online, Cộng đồng Freelancer, Digital Nomad.
+- Kênh khác: Thường xuyên xem YouTube, TikTok để học hỏi các mẹo, kỹ thuật mới.
+- Sự kiện: Các workshop, hội thảo về phát triển kỹ năng mềm, marketing online, xây dựng cộng đồng.</textarea>
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">ĐỘNG LỰC MUA HÀNG CHÍNH</div>
+                        <textarea class="canvas-textarea flex-grow">- Tìm kiếm một phương pháp marketing và bán hàng tử tế, chân thành, không spam.
+- Biến chuyên môn và đam mê thành một doanh nghiệp có lợi nhuận bền vững.
+- Xây dựng uy tín và thương hiệu cá nhân để khách hàng tự tìm đến.
+- Giải phóng bản thân khỏi các công việc thủ công, nhàm chán.
+- Tìm kiếm phương pháp kinh doanh phù hợp với giá trị sống.</textarea>
+                    </div>
+                </div>
+
+                <!-- TRẠNG THÁI SAU Column -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                     <div class="bg-gray-200 p-2 text-center font-bold text-gray-700">
+                        TRẠNG THÁI SAU
+                        <span class="block text-xs font-medium text-gray-500">(Kết quả mơ ước)</span>
+                    </div>
+                    <div class="border-t border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Có:</div><textarea class="canvas-textarea" data-sync-height="have">- Khả năng viết quảng cáo như kể chuyện, "chạm" đến cảm xúc.
+- Một hệ sinh thái hoàn chỉnh (eClick Membership, Community, Calendar) để quản lý mọi thứ từ bán khóa học, xây dựng cộng đồng đến đặt lịch hẹn.
+- Một quy trình bán hàng rõ ràng, có thể lặp lại và tự động hóa.
+- Một cộng đồng học viên/khách hàng trung thành và phát triển.
+- Có thu nhập ổn định từ chuyên môn của mình.
+- Giải pháp marketing/bán hàng thực tế, có thể áp dụng được ngay.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Cảm Thấy:</div><textarea class="canvas-textarea" data-sync-height="feel">- Tự tin, có định hướng rõ ràng.
+- Cảm thấy được trao quyền, làm chủ cuộc chơi.
+- Thích thú với việc kết nối và giúp đỡ khách hàng một cách tự nhiên.
+- Tự hào về cách mình kinh doanh, không còn mâu thuẫn nội tâm.
+- An tâm vì có một cỗ máy làm việc thay mình 24/7.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Một Ngày Bình Thường:</div><textarea class="canvas-textarea" data-sync-height="average-day">- Dành thời gian để sáng tạo nội dung giá trị và chuyên sâu.
+- Để hệ thống bán hàng tự động thu hút và chăm sóc khách hàng tiềm năng.
+- Tương tác, kết nối sâu sắc với cộng đồng học viên trung thành của mình.
+- Dành thời gian để học hỏi, nâng cao chuyên môn và tận hưởng cuộc sống tự do.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Địa Vị:</div><textarea class="canvas-textarea" data-sync-height="status">- Là một Chuyên gia/Người có ảnh hưởng trong thị ngách của mình.
+- Thoát khỏi cuộc chiến về giá, tối đa hóa giá trị từ mỗi khách hàng (upsell, bán thêm).
+- Tự tin bán các sản phẩm giá cao tương xứng với giá trị mang lại.
+- Là người lãnh đạo của một cộng đồng, người truyền cảm hứng cho người khác.
+- Có thể biến kiến thức, đam mê thành một "di sản" có sức ảnh hưởng lâu dài.</textarea></div>
+                    <div class="flex-grow flex flex-col"><div class="p-2 font-semibold text-gray-600">Cuộc Chiến Nội Tâm:</div><textarea class="canvas-textarea" data-sync-height="internal-battle">Hòa hợp giữa việc kiếm tiền và giữ vững giá trị bản thân:
+- Bán hàng mà vẫn giữ được sự chân thành và giá trị.
+- Vượt qua nỗi sợ bị đánh giá, bị xem là "người bán hàng".
+- Xây dựng doanh nghiệp bền vững dựa trên đam mê và chuyên môn.</textarea></div>
+                </div>
+
+                <!-- BOTTOM Row -->
+                <div class="col-span-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">
+                    <div class="border-b border-r border-gray-400"><div class="p-2 bg-gray-200 text-center font-bold text-gray-700">NỖI THẤT VỌNG & SỢ HÃI</div><textarea class="canvas-textarea" data-sync-height="bottom-row">Thất vọng (Pains):
+- Có chuyên môn thật sự nhưng không có học viên mới hoặc rất ít.
+- Đã từng thử đăng bài nhưng không ai quan tâm, hoặc khách hỏi rồi im lặng.
+- Từng học các khóa marketing nhưng thấy lý thuyết suông, không áp dụng được.
+- Mất niềm tin vào các mô hình Affiliate/MLM vì cách làm spam, phiền phức.
+- Bị công việc thủ công, không tên nhấn chìm, không còn thời gian sáng tạo.
+
+Sợ hãi (Lời từ chối - Anxieties):
+- "Em viết không hay, không giỏi ăn nói, không biết quay video, liệu có học được không?"
+- Sợ công nghệ phức tạp, không rành kỹ thuật (dốt công nghệ), bị rào cản khi triển khai các công cụ mới.
+- "Em không có nhiều vốn để đầu tư vào quảng cáo hay công cụ."
+- "Làm affiliate hay marketing cho sản phẩm tinh thần sợ bị người ta nói là lừa đảo, đa cấp."
+- Sợ bán sai sản phẩm, giới thiệu không đúng làm mất uy tín.</textarea></div>
+                    <div class="border-b border-r border-gray-400"><div class="p-2 bg-gray-200 text-center font-bold text-gray-700">MONG MUỐN & KHÁT VỌNG</div><textarea class="canvas-textarea" data-sync-height="bottom-row">Mong muốn (Wants):
+- Có học viên/khách hàng đều đặn mà không phải đi năn nỉ, spam hay đóng vai "sales".
+- Có một lộ trình từng bước cụ thể, thực tế, không nói lý thuyết suông.
+- Có một phương pháp marketing tử tế, nhân văn, chân thành.
+- Biết cách kể chuyện, review có tâm thay vì copy/paste mẫu câu chốt sales.
+- Một hệ thống đơn giản để quản lý mọi thứ (học viên, lịch hẹn, cộng đồng).
+- Sử dụng thành thạo AI để gia tăng hiệu suất công việc, xây dựng doanh nghiệp tinh gọn với một vài nhân sự chủ chốt kết hợp công nghệ (hệ thống, AI) để tối ưu vận hành và đạt được tăng trưởng đột phá.
+
+Khát vọng (Aspirations):
+- Xây dựng thương hiệu cá nhân có uy tín để người ta tự tìm đến.
+- Được làm công việc mình yêu thích, sống tự do (digital nomad) và có thu nhập bền vững.
+- Trở thành một chuyên gia có sức ảnh hưởng, giúp đỡ và tạo ra giá trị thật sự cho cộng đồng.</textarea></div>
+                </div>
+            </div>
+             <div class="text-xs text-gray-500 mt-4 flex justify-between items-center">
+                <span class="font-semibold">© Flowmaker™</span>
+                <div class="text-lg font-extrabold text-orange-600">
+                    FLOWMAKER<span class="align-top text-sm font-normal">™</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white pt-12 pb-8 px-4 sm:px-6 lg:px-8 no-print">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-footer-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center mb-4">
+                        <div class="text-3xl font-extrabold text-orange-500">
+                            FLOWMAKER<span class="align-top text-xl font-normal">™</span>
+                        </div>
+                    </a>
+                    <p class="italic text-gray-400">Don't Sell. Just Flow.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-200 border-b border-gray-600 pb-2 mb-3">Về tác giả: Lê Hữu Tuyến</h3>
+                    <p class="text-sm text-gray-300 mb-4">
+                        Lê Hữu Tuyến (1987) là một Copywriter chuyên nghiệp và Marketer với hơn 10 năm kinh nghiệm, hiện đang sinh sống và làm việc tại TPHCM. Với chuyên môn sâu về tâm lý học và chiến lược Marketing Phản Hồi Trực Tiếp, anh tập trung vào việc xây dựng các hệ thống kinh doanh hiệu quả, thay vì chỉ bán kiến thức đơn thuần.
+                    </p>
+                    <p class="text-sm text-gray-300 mb-4 italic">
+                        "Người làm kinh doanh phải là người tự viết được quảng cáo chuyển đổi cao cho chính mình". Công cụ này là một phần trong nỗ lực chia sẻ những kiến thức chuyên sâu đó.
+                    </p>
+                    <a href="https://tuyen.biz/cafe" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-500 text-gray-900 font-bold py-2 px-4 rounded-lg hover:bg-yellow-400 transition-colors duration-300">
+                        ☕ Mời Tuyến Cốc Cafe
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+                <p>© 2025 FLOWMAKER™. Mọi quyền được bảo lưu.</p>
+                <p>Công cụ được biên soạn bởi Lê Hữu Tuyến cho mục đích học tập và nghiên cứu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function syncAllRowHeights() {
+            const rows = {};
+            // Group textareas by their data-sync-height attribute
+            document.querySelectorAll('[data-sync-height]').forEach(el => {
+                const rowName = el.dataset.syncHeight;
+                if (!rows[rowName]) {
+                    rows[rowName] = [];
+                }
+                rows[rowName].push(el);
+            });
+
+            // For each group, find the max height and apply it
+            for (const rowName in rows) {
+                const elements = rows[rowName];
+                let maxHeight = 0;
+
+                // First, reset height to auto to get the natural scrollHeight
+                elements.forEach(el => {
+                    el.style.height = 'auto';
+                });
+
+                // Then, find the maximum scrollHeight in the row
+                elements.forEach(el => {
+                    if (el.scrollHeight > maxHeight) {
+                        maxHeight = el.scrollHeight;
+                    }
+                });
+
+                // Finally, set all elements in the row to the max height
+                elements.forEach(el => {
+                    // Add a small buffer for padding/border differences
+                    el.style.height = (maxHeight + 2) + 'px';
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('.canvas-textarea');
+            
+            textareas.forEach(textarea => {
+                // When a user types, sync all rows
+                textarea.addEventListener('input', () => {
+                    syncAllRowHeights();
+                });
+            });
+
+            // Initial sync on load
+            // Use a small timeout to ensure all fonts and elements are rendered
+            setTimeout(syncAllRowHeights, 100);
+
+            // Sync on window resize
+            window.addEventListener('resize', syncAllRowHeights);
+        });
+    </script>
+
+</body>
+</html>
