@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BẢNG PHÁC THẢO CHÂN DUNG KHÁCH HÀNG: HÙNG (Version 2.2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .canvas-textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background-color: transparent;
+            resize: none;
+            color: #1f2937;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-y: auto; 
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+            background-size: 18px 18px;
+            min-height: 120px;
+        }
+        .canvas-textarea:focus {
+            outline: 2px solid #4f46e5;
+            background-color: rgba(239, 246, 255, 0.8);
+            border-radius: 4px;
+        }
+
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .no-print { display: none; }
+            .printable-canvas { box-shadow: none !important; margin: 0 !important; width: 100% !important; max-width: 100% !important; border: none; }
+            .canvas-textarea { color: #000 !important; background-color: transparent !important; }
+        }
+        
+        .canvas-input {
+            width: 100%;
+            border-bottom: 1px solid #9ca3af;
+            background-color: transparent;
+            padding: 2px 0;
+        }
+        .canvas-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+
+        /* Custom styles for the JTBD grid */
+        .jtbd-grid-container {
+            @apply grid grid-cols-1 lg:grid-cols-3 border-t border-l border-gray-400;
+        }
+        .jtbd-col {
+            @apply border-b border-r border-gray-400 flex flex-col;
+        }
+        .jtbd-col-header {
+            @apply bg-gray-200 p-2 text-center font-bold text-gray-700 text-lg;
+        }
+        .jtbd-section-header {
+            @apply p-2 font-semibold text-gray-600 border-b border-gray-300;
+        }
+        .jtbd-list {
+            @apply text-sm text-gray-700 list-disc list-inside p-4 space-y-1;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                    <div class="text-xl sm:text-2xl font-extrabold text-orange-600">
+                        FLOWMAKER<span class="align-top text-base sm:text-lg font-normal">™</span>
+                    </div>
+                </a>
+                
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base bg-indigo-600 text-white font-semibold px-3 py-2 sm:px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    Về Website Chính
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="py-8 px-4">
+        <div class="printable-canvas container mx-auto max-w-5xl bg-white p-4 sm:p-6 border border-gray-300 shadow-lg rounded-lg">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b pb-4">
+                <h1 class="text-xl lg:text-2xl font-bold text-gray-800 tracking-wider flex items-center">
+                    BẢNG PHÁC THẢO CHÂN DUNG KHÁCH HÀNG 
+                    <span class="ml-3 px-2 py-1 bg-gray-200 text-gray-700 text-xs font-semibold rounded-full">Version #2.2</span>
+                </h1>
+                <div class="text-xs text-gray-600 mt-4 sm:mt-0 w-full sm:w-auto">
+                    <div class="flex items-center justify-between sm:justify-end gap-4">
+                        <label for="designedFor" class="flex-shrink-0">THIẾT KẾ CHO:</label>
+                        <input type="text" id="designedFor" class="canvas-input w-2/3 sm:w-40 font-semibold" value="Hùng – Chủ Doanh nghiệp Chật vật">
+                    </div>
+                    <div class="flex items-center justify-between sm:justify-end gap-4 mt-1">
+                        <label for="designedBy" class="flex-shrink-0">THIẾT KẾ BỞI:</label>
+                        <input type="text" id="designedBy" class="canvas-input w-2/3 sm:w-40" value="Lê Hữu Tuyến">
+                    </div>
+                     <div class="flex items-center justify-between sm:justify-end gap-4 mt-1">
+                        <label for="date" class="flex-shrink-0">NGÀY:</label>
+                        <input type="text" id="date" class="canvas-input w-2/3 sm:w-40" value="02/07/2025">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-6">
+                <a href="https://tuyen.co/jtbd-hung" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 text-base shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-2 -mt-1" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.022 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                    </svg>
+                    Xem Báo Cáo Phân Tích JTBD Chi Tiết
+                </a>
+            </div>
+
+            <div class="mb-6 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
+                <p class="text-sm text-gray-800 italic leading-relaxed">
+                    Tóm tắt chân dung: Hùng – Đại diện cho thế giới kinh doanh truyền thống (SMEs). Nỗi đau của anh ta là sự hỗn loạn hữu hình: nhân viên không có quy trình, dữ liệu phân mảnh, vận hành chắp vá. "Công việc" của anh ta là áp đặt trật tự lên sự hỗn loạn để doanh nghiệp có thể tăng trưởng mà không sụp đổ.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-l border-gray-400">
+                
+                <!-- TRẠNG THÁI TRƯỚC Column -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                    <div class="bg-gray-200 p-2 text-center font-bold text-gray-700">
+                        TRẠNG THÁI TRƯỚC
+                        <span class="block text-xs font-medium text-gray-500">(Nỗi đau hiện tại)</span>
+                    </div>
+                    <div class="border-t border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Có:</div><textarea class="canvas-textarea" data-sync-height="have">- Một đội ngũ sales kỹ năng không đều, làm việc không có quy trình chung.
+- Dữ liệu khách hàng quản lý thủ công, phân mảnh trên Google Sheets, Zalo và trong trí nhớ nhân viên.
+- Các công cụ marketing, website, CRM rời rạc, không "nói chuyện" được với nhau.
+- Rất nhiều khách hàng tiềm năng bị bỏ lọt mỗi ngày do quy trình chăm sóc tự phát, thiếu nhất quán.
+- Một kho hàng tồn đọng không biết cách giải quyết.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Cảm Thấy:</div><textarea class="canvas-textarea" data-sync-height="feel">- Cảm thấy chật vật, mệt mỏi, quá tải vì "việc gì cũng đến tay".
+- Bế tắc và chán nản vì nhân viên làm không như ý, không thể vực dậy được đội nhóm.
+- Áp lực và nhức đầu vì dòng tiền không ổn định, phải liên tục cân đối chi phí.
+- Bất lực vì thấy rõ vấn đề nhưng không biết phải bắt đầu hệ thống hóa từ đâu.
+- Thua thiệt và ghen tị khi thấy đối thủ cũng làm như mình nhưng họ lại bán được hàng.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Một Ngày Bình Thường:</div><textarea class="canvas-textarea" data-sync-height="average-day">- Bắt đầu ngày mới bằng việc đi "chữa cháy", xử lý các vấn đề vận hành phát sinh.
+- Phải thúc giục, giám sát đội ngũ sales từng chút một.
+- Tự mình mày mò kỹ thuật, đăng bài, livestream nhưng không hiệu quả.
+- Nhìn các báo cáo quảng cáo, các chỉ số phù phiếm (like, view) nhưng không hiểu hiệu quả thực sự ở đâu.
+- "Chết chìm trong công việc hàng ngày" mà không có thời gian cho tư duy chiến lược.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Địa Vị:</div><textarea class="canvas-textarea" data-sync-height="status">- Là một "khổ chủ" trong chính công ty của mình.
+- Bị đối thủ nhiều tiền hơn, có chiêu trò marketing tốt hơn lấn lướt, đè giá, phá giá.
+- Loay hoay, không được công nhận là một nhà lãnh đạo có tầm nhìn, có chiến lược.
+- Bị xem là một doanh nghiệp nhỏ lẻ, làm ăn chắp vá, không chuyên nghiệp.</textarea></div>
+                    <div class="flex-grow flex flex-col"><div class="p-2 font-semibold text-gray-600">Cuộc Chiến Nội Tâm:</div><textarea class="canvas-textarea" data-sync-height="internal-battle">Chống lại SỰ HỖN LOẠN:
+- Vận hành thủ công, chắp vá.
+- Dữ liệu phân mảnh, không nhất quán.
+- Sự phụ thuộc vào yếu tố con người, thiếu quy trình.</textarea></div>
+                </div>
+
+                <!-- CHÂN DUNG / HÌNH MẪU Column -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                    <div class="border-b border-gray-400 flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">CHÂN DUNG / HÌNH MẪU</div>
+                        <textarea class="canvas-textarea flex-grow">- Tên: Trần Văn Hùng
+- Tuổi: 38-45
+- Chức vụ: Giám đốc / Sáng lập SME (10-30 nhân sự)
+- Lĩnh vực: Sản xuất, Thương mại, Dịch vụ (VLXD, Nội thất, Spa, Nông sản, Thực phẩm, Dược...).</textarea>
+                    </div>
+                    <div class="border-b border-gray-400 flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">NHÂN KHẨU HỌC / SỞ THÍCH</div>
+                        <textarea class="canvas-textarea flex-grow">- Nơi tìm kiếm thông tin: CafeBiz, Doanh nhân Sài Gòn, các trang tin kinh tế.
+- Người ảnh hưởng: Có xu hướng theo dõi các chuyên gia về Sales, Động lực (Phạm Thành Long...), hoặc các diễn giả về quản trị, nhân sự.
+- Nơi hoạt động: Các group Facebook về Quản trị Doanh nghiệp, CEO, Khởi nghiệp.
+- Sự kiện tham dự: Các hội thảo về chuyển đổi số, quản trị nhân sự, kết nối doanh nhân (BNI).</textarea>
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">ĐỘNG LỰC MUA HÀNG CHÍNH</div>
+                        <textarea class="canvas-textarea flex-grow">- Áp đặt TRẬT TỰ lên sự hỗn loạn.
+- Tìm kiếm một giải pháp TỔNG THỂ để hệ thống hóa vận hành, thay vì các công cụ chắp vá.
+- Giúp doanh nghiệp TĂNG TRƯỞNG bền vững mà không sụp đổ.
+- GIẢI PHÓNG bản thân khỏi các công việc vận hành để tập trung vào chiến lược.</textarea>
+                    </div>
+                </div>
+
+                <!-- TRẠNG THÁI SAU Column -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                     <div class="bg-gray-200 p-2 text-center font-bold text-gray-700">
+                        TRẠNG THÁI SAU
+                        <span class="block text-xs font-medium text-gray-500">(Kết quả mơ ước)</span>
+                    </div>
+                    <div class="border-t border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Có:</div><textarea class="canvas-textarea" data-sync-height="have">- Một hệ thống duy nhất (eClick CRM) để quản lý mọi hoạt động Marketing - Sales - Chăm sóc khách hàng.
+- Một quy trình bán hàng tự động, từ thu hút khách hàng tiềm năng đến nuôi dưỡng và chốt sale.
+- Một đội ngũ sales được trang bị kịch bản và công cụ chuẩn, làm việc nhất quán và hiệu quả.
+- Một tệp khách hàng tiềm năng được nuôi dưỡng tự động 24/7, không bỏ sót bất kỳ cơ hội nào.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Cảm Thấy:</div><textarea class="canvas-textarea" data-sync-height="feel">- Tĩnh tại, tự tin, có tầm nhìn chiến lược để dẫn dắt công ty.
+- An tâm về dòng tiền và sự tăng trưởng có thể dự đoán được.
+- Cảm thấy được giải phóng, làm chủ doanh nghiệp và thời gian của mình để cân bằng với cuộc sống gia đình.
+- Tự hào về một doanh nghiệp vận hành chuyên nghiệp, bài bản.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Một Ngày Bình Thường:</div><textarea class="canvas-textarea" data-sync-height="average-day">- Bắt đầu ngày mới bằng việc xem dashboard báo cáo của eClick CRM để nắm tình hình kinh doanh trong 5 phút.
+- Dành thời gian chất lượng cho việc lên chiến lược, gặp gỡ đối tác quan trọng.
+- Họp với đội nhóm để xem dữ liệu và tối ưu hệ thống, thay vì giải quyết các sự vụ lặt vặt.
+- Có thời gian để học hỏi, nâng cao năng lực lãnh đạo của bản thân.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Địa Vị:</div><textarea class="canvas-textarea" data-sync-height="status">- Là một Nhà chiến lược, một vị thuyền trưởng thực thụ lèo lái con tàu doanh nghiệp.
+- Dẫn dắt thị trường bằng một hệ thống marketing bài bản, thay vì chạy theo đối thủ.
+- Được đội ngũ nể trọng và tin tưởng đi theo.
+- Được đối tác và đối thủ nhìn nhận là một doanh nghiệp chuyên nghiệp, đáng gờm.</textarea></div>
+                    <div class="flex-grow flex flex-col"><div class="p-2 font-semibold text-gray-600">Cuộc Chiến Nội Tâm:</div><textarea class="canvas-textarea" data-sync-height="internal-battle">Chinh phục SỰ TRẬT TỰ:
+- Xây dựng quy trình, cấu trúc cho doanh nghiệp.
+- Vượt qua rào cản kỹ năng và sự phức tạp của công nghệ.
+- Tiết kiệm chi phí và tối ưu nguồn lực.</textarea></div>
+                </div>
+
+                <!-- BOTTOM Row -->
+                <div class="col-span-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">
+                    <div class="border-b border-r border-gray-400"><div class="p-2 bg-gray-200 text-center font-bold text-gray-700">NỖI THẤT VỌNG & SỢ HÃI</div><textarea class="canvas-textarea" data-sync-height="bottom-row">Thất vọng (Pains):
+- Đã tốn quá nhiều tiền cho quảng cáo, website, công cụ nhưng không hiệu quả, không ra tiền.
+- Nhân viên yếu kém, ù lì, đào tạo nhiều lần vẫn không nắm được kiến thức, không làm được việc.
+- Phải tự mình làm tất cả mọi việc, cảm thấy kiệt sức và chán nản.
+- Tình hình kinh doanh ế ẩm, doanh thu thấp, càng bán càng thấy nợ.
+
+Sợ hãi (Lời từ chối - Anxieties):
+- "Hệ thống này có phức tạp quá không? Công ty tôi nhỏ, nhân viên 'low-tech', sợ không áp dụng nổi."
+- "Chi phí bao nhiêu? Tôi đã lãng phí quá nhiều tiền rồi, giờ đầu tư tiếp lại sợ thất bại."
+- "Lý thuyết thì hay đấy, nhưng tôi cần cái gì đó làm được ngay, có kết quả nhanh."
+- Dốt công nghệ, không biết sử dụng AI để nâng cao hiệu suất.</textarea></div>
+                    <div class="border-b border-r border-gray-400"><div class="p-2 bg-gray-200 text-center font-bold text-gray-700">MONG MUỐN & KHÁT VỌNG</div><textarea class="canvas-textarea" data-sync-height="bottom-row">Mong muốn (Wants):
+- Cần một lộ trình, một chiến lược bài bản, rõ ràng để làm theo, không còn phải mày mò.
+- Muốn có một công cụ "tất cả trong một", đơn giản, dễ sử dụng để quản lý mọi thứ.
+- Cần các kịch bản, quy trình chuẩn để chuyển giao cho đội ngũ.
+- Muốn xây dựng đội ngũ bán hàng hiệu quả.
+- Tìm cách để thoát khỏi cuộc chiến về giá, tạo ra sự khác biệt.
+- Nâng cao hiệu suất đội ngũ bằng cách sử dụng thành thạo AI, xây dựng doanh nghiệp tinh gọn với một vài nhân sự chủ chốt kết hợp công nghệ (hệ thống, AI) để tối ưu vận hành và đạt được tăng trưởng đột phá.
+
+Khát vọng (Aspirations):
+- Muốn doanh nghiệp ngày càng phát triển hơn, tăng trưởng bền vững.
+- Xây dựng được một hệ thống kinh doanh tự động để giải phóng bản thân.
+- Trở thành một nhà lãnh đạo có tầm nhìn, làm chủ cuộc chơi.
+- Có thời gian cho gia đình và cân bằng cuộc sống.</textarea></div>
+                </div>
+            </div>
+             <!-- Copyright notice updated -->
+            <div class="text-xs text-gray-500 mt-4 flex justify-between items-center">
+                <span class="font-semibold">© Flowmaker™</span>
+                <div class="text-lg font-extrabold text-orange-600">
+                    FLOWMAKER<span class="align-top text-sm font-normal">™</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-8 px-4 sm:px-6 lg:px-8 no-print">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-footer-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center mb-4">
+                        <div class="text-3xl font-extrabold text-orange-500">
+                            FLOWMAKER<span class="align-top text-xl font-normal">™</span>
+                        </div>
+                    </a>
+                    <p class="italic text-gray-400">Don't Sell. Just Flow.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-200 border-b border-gray-600 pb-2 mb-3">Về tác giả: Lê Hữu Tuyến</h3>
+                    <p class="text-sm text-gray-300 mb-4">
+                        Lê Hữu Tuyến (1987) là một Copywriter chuyên nghiệp và Marketer với hơn 10 năm kinh nghiệm, hiện đang sinh sống và làm việc tại TPHCM. Với chuyên môn sâu về tâm lý học và chiến lược Marketing Phản Hồi Trực Tiếp, anh tập trung vào việc xây dựng các hệ thống kinh doanh hiệu quả, thay vì chỉ bán kiến thức đơn thuần.
+                    </p>
+                    <p class="text-sm text-gray-300 mb-4 italic">
+                        "Người làm kinh doanh phải là người tự viết được quảng cáo chuyển đổi cao cho chính mình". Công cụ này là một phần trong nỗ lực chia sẻ những kiến thức chuyên sâu đó.
+                    </p>
+                    <a href="https://tuyen.biz/cafe" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-500 text-gray-900 font-bold py-2 px-4 rounded-lg hover:bg-yellow-400 transition-colors duration-300">
+                        ☕ Mời Tuyến Cốc Cafe
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+                <p>© 2025 FLOWMAKER™. Mọi quyền được bảo lưu.</p>
+                <p>Công cụ được biên soạn bởi Lê Hữu Tuyến cho mục đích học tập và nghiên cứu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function syncAllRowHeights() {
+            const rows = {};
+            // Group textareas by their data-sync-height attribute
+            document.querySelectorAll('[data-sync-height]').forEach(el => {
+                const rowName = el.dataset.syncHeight;
+                if (!rows[rowName]) {
+                    rows[rowName] = [];
+                }
+                rows[rowName].push(el);
+            });
+
+            // For each group, find the max height and apply it
+            for (const rowName in rows) {
+                const elements = rows[rowName];
+                let maxHeight = 0;
+
+                // First, reset height to auto to get the natural scrollHeight
+                elements.forEach(el => {
+                    el.style.height = 'auto';
+                });
+
+                // Then, find the maximum scrollHeight in the row
+                elements.forEach(el => {
+                    if (el.scrollHeight > maxHeight) {
+                        maxHeight = el.scrollHeight;
+                    }
+                });
+
+                // Finally, set all elements in the row to the max height
+                elements.forEach(el => {
+                    // Add a small buffer for padding/border differences
+                    el.style.height = (maxHeight + 2) + 'px';
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('.canvas-textarea');
+            
+            textareas.forEach(textarea => {
+                // When a user types, sync all rows
+                textarea.addEventListener('input', () => {
+                    syncAllRowHeights();
+                });
+            });
+
+            // Initial sync on load
+            // Use a small timeout to ensure all fonts and elements are rendered
+            setTimeout(syncAllRowHeights, 100);
+
+            // Sync on window resize
+            window.addEventListener('resize', syncAllRowHeights);
+        });
+    </script>
+
+</body>
+</html>
