@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ Khách hàng: Người lao động tri thức</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .canvas-textarea {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            background-color: transparent;
+            resize: none;
+            color: #1f2937;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-y: auto; 
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+            background-size: 18px 18px;
+            min-height: 120px;
+        }
+        .canvas-textarea:focus {
+            outline: 2px solid #4f46e5;
+            background-color: rgba(239, 246, 255, 0.8);
+            border-radius: 4px;
+        }
+        .canvas-input {
+            width: 100%;
+            border-bottom: 1px solid #9ca3af;
+            background-color: transparent;
+            padding: 2px 0;
+        }
+        .canvas-input:focus {
+            outline: none;
+            border-bottom: 2px solid #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main content area -->
+    <main class="py-8 px-4">
+        <div class="container mx-auto max-w-6xl bg-white p-4 sm:p-6 border border-gray-300 shadow-lg rounded-lg">
+            
+            <!-- Canvas Header -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-4">
+                <h1 class="text-xl lg:text-2xl font-bold text-gray-800 tracking-wider">BẢNG PHÁC THẢO CHÂN DUNG KHÁCH HÀNG</h1>
+                <div class="text-xs text-gray-600 mt-4 sm:mt-0 w-full sm:w-auto">
+                    <div class="flex items-center justify-between sm:justify-end gap-4">
+                        <label for="designedFor" class="flex-shrink-0">THIẾT KẾ CHO:</label>
+                        <input type="text" id="designedFor" class="canvas-input w-2/3 sm:w-48 font-semibold" value="Người lao động tri thức">
+                    </div>
+                    <div class="flex items-center justify-between sm:justify-end gap-4 mt-1">
+                        <label for="designedBy" class="flex-shrink-0">THIẾT KẾ BỞI:</label>
+                        <input type="text" id="designedBy" class="canvas-input w-2/3 sm:w-48" value="Lê Hữu Tuyến">
+                    </div>
+                     <div class="flex items-center justify-between sm:justify-end gap-4 mt-1">
+                        <label for="date" class="flex-shrink-0">NGÀY:</label>
+                        <input type="text" id="date" class="canvas-input w-2/3 sm:w-48" value="06/07/2025">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Block -->
+            <div class="mb-6 p-4 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
+                <p class="text-sm text-gray-800 italic leading-relaxed">
+                    <strong>Tóm tắt chân dung:</strong> Người lao động tri thức là chuyên gia trong lĩnh vực của họ, nhưng đang bị nhấn chìm trong sự hỗn loạn của thông tin. "Công việc" của họ là tìm lại sự kiểm soát, sự minh mẫn và hiệu suất đỉnh cao bằng cách xây dựng một "bộ não thứ hai" đáng tin cậy, giải phóng họ khỏi gánh nặng quản lý tri thức thủ công.
+                </p>
+            </div>
+
+            <!-- Canvas Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 border-t border-l border-gray-400">
+                
+                <!-- Column 1: Before State -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                    <div class="bg-red-100 p-2 text-center font-bold text-red-800">
+                        TRẠNG THÁI TRƯỚC
+                        <span class="block text-xs font-medium text-red-600">(Nỗi đau hiện tại)</span>
+                    </div>
+                    <div class="border-t border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Có:</div><textarea class="canvas-textarea" data-sync-height="have">- Một mớ ghi chú và file hỗn loạn, phân mảnh trên nhiều nền tảng (máy tính, Drive, Notion...).
+- Quy trình lưu trữ rườm rà, làm gián đoạn dòng suy nghĩ và cảm hứng.
+- Các dự án bị trì trệ, bỏ lỡ deadline.
+- Chi phí làm lại (rework) cao vì không tận dụng được kiến thức đã có.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Cảm Thấy:</div><textarea class="canvas-textarea" data-sync-height="feel">- Tê liệt, không biết bắt đầu từ đâu.
+- Căng thẳng, lo âu về việc "sót việc" hay "quên mất điều gì đó quan trọng".
+- Quá tải, kiệt sức (burnout) do cảm giác mất kiểm soát kéo dài.
+- Thiếu chuyên nghiệp khi lúng túng vì không tìm được tài liệu cần thiết.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Một Ngày Bình Thường:</div><textarea class="canvas-textarea" data-sync-height="average-day">- Mất thời gian vô ích để tìm kiếm một file/thông tin cũ.
+- Luồng suy nghĩ bị gián đoạn liên tục do phải chuyển đổi giữa các ứng dụng.
+- Phải nghiên cứu lại những việc đã làm.
+- Chất lượng công việc, chiến lược bị giảm sút.</textarea></div>
+                    <div class="flex-grow flex flex-col"><div class="p-2 font-semibold text-gray-600">Cuộc Chiến Nội Tâm:</div><textarea class="canvas-textarea" data-sync-height="internal-battle">Mâu thuẫn giữa "Sáng tạo" và "Hỗn loạn":
+- Muốn có không gian cho tư duy sâu và sáng tạo.
+- Nhưng bị nhấn chìm bởi sự vô tổ chức và các công việc hành chính.
+- Tin rằng sự tổ chức là nền tảng, nhưng lại quen với thói quen cũ và ngại thay đổi.</textarea></div>
+                </div>
+
+                <!-- Column 2: Profile -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                    <div class="border-b border-gray-400 flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">CHÂN DUNG / HÌNH MẪU</div>
+                        <textarea class="canvas-textarea flex-grow">- Tên: Người lao động tri thức (Knowledge Worker)
+- Vai trò: Chuyên gia, nhà văn, nhà nghiên cứu, quản lý dự án, nhà chiến lược.
+- Đặc điểm: Công việc đòi hỏi xử lý lượng lớn thông tin, chịu áp lực về hiệu suất và sáng tạo liên tục.
+- Bối cảnh: Đang cảm thấy quá tải, đối mặt với các dự án quan trọng đòi hỏi sự tập trung cao độ.</textarea>
+                    </div>
+                    <div class="border-b border-gray-400 flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">YẾU TỐ THÚC ĐẨY (DRIVERS)</div>
+                        <textarea class="canvas-textarea flex-grow">Lực đẩy (Push) - Điều không chịu được nữa:
+- Các dự án bị đình trệ, phải làm lại công việc.
+- Cảm giác quá tải và nguy cơ kiệt sức (burnout) đang hiển hiện.
+- Bỏ lỡ cơ hội kinh doanh vì không cung cấp thông tin kịp thời.
+
+Lực kéo (Pull) - Điều muốn đạt được:
+- Hình ảnh một bản thân làm việc hiệu quả, sáng tạo, điềm tĩnh.
+- Sở hữu một "bộ não thứ hai" đáng tin cậy.
+- Được công nhận là một chuyên gia có tổ chức, chuyên nghiệp.</textarea>
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <div class="p-2 bg-gray-200 text-center font-bold text-gray-700">YẾU TỐ CẢN TRỞ (FORCES)</div>
+                        <textarea class="canvas-textarea flex-grow">Lo ngại (Anxiety):
+- Sợ việc thiết lập hệ thống mới tốn thời gian, công sức.
+- Sợ không đủ kiên trì để theo đuổi hệ thống mới.
+- Sợ chọn sai công cụ/phương pháp và lại phải làm lại từ đầu.
+
+Quán tính (Inertia) - Thói quen trì trệ:
+- Đã quen với việc lưu trữ file/ghi chú theo thói quen cũ dù biết nó không hiệu quả.
+- Suy nghĩ "để sau rồi dọn dẹp" vì ngại đối mặt với sự hỗn loạn hiện tại.</textarea>
+                    </div>
+                </div>
+
+                <!-- Column 3: After State -->
+                <div class="col-span-1 border-b border-r border-gray-400 flex flex-col">
+                     <div class="bg-green-100 p-2 text-center font-bold text-green-800">
+                        TRẠNG THÁI SAU
+                        <span class="block text-xs font-medium text-green-600">(Kết quả mơ ước)</span>
+                    </div>
+                    <div class="border-t border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Có:</div><textarea class="canvas-textarea" data-sync-height="have">- Một "Bộ não thứ hai" (Second Brain) nơi các ý tưởng tự động kết nối và tạo ra insight mới.
+- Một hệ thống đồng bộ và nhất quán trên mọi thiết bị.
+- Thời gian và không gian tinh thần cho tư duy chiến lược và sáng tạo.
+- Năng lượng được giải phóng để cải thiện các khía cạnh khác của cuộc sống.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Cảm Thấy:</div><textarea class="canvas-textarea" data-sync-height="feel">- Kiểm soát được công việc và cuộc sống.
+- Có được sự minh mẫn, tĩnh tại trong tâm trí ("Mind Like Water").
+- Tự tin vào hệ thống và năng lực của bản thân.
+- An tâm, không còn lo lắng về việc "sót việc" hay quên điều quan trọng.</textarea></div>
+                    <div class="border-b border-gray-400"><div class="p-2 font-semibold text-gray-600">Một Ngày Bình Thường:</div><textarea class="canvas-textarea" data-sync-height="average-day">- Tìm thấy bất cứ thông tin gì trong vòng dưới 10 giây.
+- Biết chính xác nơi để lưu một thông tin mới mà không cần suy nghĩ.
+- Dễ dàng cộng tác, chia sẻ và bàn giao công việc một cách liền mạch.
+- Tập trung hoàn toàn vào công việc hiện tại, đạt hiệu suất cao.</textarea></div>
+                    <div class="flex-grow flex flex-col"><div class="p-2 font-semibold text-gray-600">Cuộc Chiến Nội Tâm:</div><textarea class="canvas-textarea" data-sync-height="internal-battle">Hòa hợp giữa "Sáng tạo" và "Hệ thống":
+- Hệ thống không bóp nghẹt mà còn thúc đẩy sự sáng tạo.
+- Biến việc tổ chức tri thức thành một thói quen tự nhiên, không tốn sức.
+- Gây ấn tượng mạnh mẽ về sự chuyên nghiệp và năng lực tổ chức vượt trội.</textarea></div>
+                </div>
+
+                <!-- BOTTOM Row -->
+                <div class="col-span-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">
+                    <div class="border-b border-r border-gray-400"><div class="p-2 bg-red-100 text-center font-bold text-red-800">NỖI ĐAU & RỦI RO</div><textarea class="canvas-textarea" data-sync-height="bottom-row">Nỗi đau (Pains):
+- Phải làm lại, viết lại, nghiên cứu lại (Chi phí Rework).
+- Chất lượng công việc giảm sút do không tận dụng hết kiến thức.
+- Bỏ lỡ deadline, dự án trì trệ, bỏ lỡ cơ hội kinh doanh.
+- Gây ấn tượng thiếu chuyên nghiệp.
+
+Rủi ro tiềm ẩn (Risks):
+- Nguy cơ mất mát vĩnh viễn toàn bộ tài sản tri thức.
+- Nguy cơ một ý tưởng đột phá, giá trị bị lãng quên.
+- Nguy cơ kiệt sức (burnout) do quá tải kéo dài.</textarea></div>
+                    <div class="border-b border-r border-gray-400"><div class="p-2 bg-green-100 text-center font-bold text-green-800">LỢI ÍCH & KHÁT VỌNG</div><textarea class="canvas-textarea" data-sync-height="bottom-row">Lợi ích mong đợi (Gains):
+- Giảm thời gian cho công việc hành chính (sắp xếp, tìm kiếm).
+- Có thêm thời gian và không gian cho tư duy sâu.
+- Dễ dàng cộng tác và chia sẻ liền mạch.
+
+Khát vọng (Aspirations):
+- Sở hữu một "Bộ não thứ hai" tự động kết nối ý tưởng.
+- Đạt trạng thái "Tâm trí như mặt hồ tĩnh lặng".
+- Hệ thống tự phát hiện ra các mô thức trong tư duy của chính mình.</textarea></div>
+                </div>
+            </div>
+             <!-- Copyright notice -->
+            <div class="text-xs text-gray-500 mt-4 text-center">
+                <span>Bản phác thảo được tạo bởi AI theo yêu cầu.</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function syncAllRowHeights() {
+            const rows = {};
+            // Group textareas by their data-sync-height attribute
+            document.querySelectorAll('[data-sync-height]').forEach(el => {
+                const rowName = el.dataset.syncHeight;
+                if (!rows[rowName]) {
+                    rows[rowName] = [];
+                }
+                rows[rowName].push(el);
+            });
+
+            // For each group, find the max height and apply it
+            for (const rowName in rows) {
+                const elements = rows[rowName];
+                let maxHeight = 0;
+
+                // First, reset height to auto to get the natural scrollHeight
+                elements.forEach(el => {
+                    el.style.height = 'auto';
+                });
+
+                // Then, find the maximum scrollHeight in the row
+                elements.forEach(el => {
+                    if (el.scrollHeight > maxHeight) {
+                        maxHeight = el.scrollHeight;
+                    }
+                });
+
+                // Finally, set all elements in the row to the max height
+                elements.forEach(el => {
+                    el.style.height = (maxHeight + 2) + 'px';
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const textareas = document.querySelectorAll('.canvas-textarea');
+            
+            textareas.forEach(textarea => {
+                textarea.addEventListener('input', () => {
+                    syncAllRowHeights();
+                });
+            });
+
+            // Initial sync on load
+            setTimeout(syncAllRowHeights, 100);
+
+            // Sync on window resize
+            window.addEventListener('resize', syncAllRowHeights);
+        });
+    </script>
+
+</body>
+</html>
