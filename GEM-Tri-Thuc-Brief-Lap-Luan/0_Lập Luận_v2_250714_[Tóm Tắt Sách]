@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu tra cứu: Thực Hành Lập Luận - Lê Hữu Tuyến</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .prose h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #111827;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #F97316;
+            padding-bottom: 0.75rem;
+        }
+        .prose h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .prose h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose p, .prose li {
+            line-height: 1.75;
+        }
+        .prose ul {
+            list-style-position: outside;
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        .prose blockquote {
+            border-left: 4px solid #F97316;
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+            color: #4B5563;
+            background-color: #FEF3C7;
+            padding: 1rem;
+            border-radius: 0.25rem;
+        }
+        .highlight {
+            background-color: #FDE68A;
+            color: #92400E;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        #toc-sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        @media (max-width: 768px) {
+            #toc-sidebar {
+                transform: translateX(-100%);
+                position: fixed;
+                height: 100%;
+                z-index: 100;
+            }
+            #toc-sidebar.open {
+                transform: translateX(0);
+            }
+            #main-content {
+                width: 100%;
+            }
+        }
+        /* Custom styles for collapsible sections */
+        .prose details > summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease;
+        }
+        .prose details > summary:hover {
+            background-color: #F3F4F6;
+        }
+        .prose details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .prose details > summary::before {
+            content: '►';
+            margin-right: 0.75rem;
+            font-size: 0.8em;
+            transition: transform 0.2s ease-in-out;
+            color: #F97316;
+        }
+        .prose details[open] > summary::before {
+            transform: rotate(90deg);
+        }
+        .prose details > div {
+            padding-left: 2rem;
+            border-left: 2px solid #E5E7EB;
+            margin-left: 0.5rem;
+        }
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <button id="menu-button" class="md:hidden mr-4 p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                        <div class="text-xl sm:text-2xl font-extrabold text-orange-600">
+                            FLOWMAKER<span class="align-top text-base sm:text-lg font-normal">™</span>
+                        </div>
+                    </a>
+                </div>
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base bg-indigo-600 text-white font-semibold px-3 py-2 sm:px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    Về Website Chính
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex max-w-7xl mx-auto">
+        <!-- Sidebar / Table of Contents -->
+        <aside id="toc-sidebar" class="w-64 bg-white p-6 border-r border-gray-200 h-screen sticky top-16 overflow-y-auto">
+            <div class="mb-4">
+                <input type="text" id="search-input" placeholder="Tìm kiếm trong tài liệu..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500">
+            </div>
+            <nav id="toc-nav">
+                <!-- Table of Contents will be generated here by JS -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="flex-1 p-6 md:p-10">
+            <header class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-indigo-600">Thực Hành Lập Luận</span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Tài liệu tra cứu dựa trên tác phẩm của Lê Hữu Tuyến</p>
+                <p class="mt-2 text-sm text-gray-500" id="version-info"></p>
+            </header>
+            <div id="content-display" class="prose max-w-none">
+                <!-- Chapter content will be rendered here by JS -->
+            </div>
+             <div class="mt-12 text-center">
+                <a href="https://docs.google.com/document/d/1_BDEjgB_ycruCWQEkzaBz2RwfTcJhFpWJdatGVXypBw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                    Xem Sách Gốc (Google Docs)
+                </a>
+            </div>
+        </main>
+    </div>
+    
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden"></div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-footer-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center mb-4">
+                        <div class="text-3xl font-extrabold text-orange-500">
+                            FLOWMAKER<span class="align-top text-xl font-normal">™</span>
+                        </div>
+                    </a>
+                    <p class="text-lg italic text-gray-400">don't Sell. Just Flow.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 border-b-2 border-orange-500 pb-2">Về tác giả: Lê Hữu Tuyến</h3>
+                    <p class="text-gray-300 mb-4">
+                        Lê Hữu Tuyến (1987) là một Copywriter chuyên nghiệp và Marketer với hơn 10 năm kinh nghiệm, hiện đang sinh sống và làm việc tại TPHCM. Với chuyên môn sâu về tâm lý học và chiến lược Marketing Phản Hồi Trực Tiếp, anh tập trung vào việc xây dựng các hệ thống kinh doanh hiệu quả, thay vì chỉ bán kiến thức đơn thuần.
+                    </p>
+                    <p class="text-gray-300 mb-6">
+                        Triết lý của anh là: "Người làm kinh doanh phải là người tự viết được quảng cáo chuyển đổi cao cho chính mình". Công cụ này là một phần trong nỗ lực chia sẻ những kiến thức chuyên sâu đó.
+                    </p>
+                    <a href="https://tuyen.biz/cafe" target="_blank" rel="noopener noreferrer" class="inline-block bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                        Mời Tuyến Cốc Cafe
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+                <p>© 2025 FLOWMAKER™. Mọi quyền được bảo lưu.</p>
+                <p>Công cụ được biên soạn bởi Lê Hữu Tuyến cho mục đích học tập và nghiên cứu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const bookData = {
+            "chapters": [
+                {
+                    "id": "chuong-1",
+                    "title": "Chương 1: Góc Nhìn Về Lập Luận",
+                    "content": `
+                        <details open><summary>Định Nghĩa Về Lập Luận</summary><div>
+                        <p>Lập luận là việc <strong>biện minh cho các Luận Điểm (claims) trong điều kiện không chắc chắn</strong>. Có bốn từ khóa cần được làm rõ trong định nghĩa này:</p>
+                        <ul>
+                            <li><strong>Thực Hành (Practice):</strong> Lập luận là một hoạt động mà con người tham gia, diễn ra trong những bối cảnh cụ thể.</li>
+                            <li><strong>Biện Minh (Justifying):</strong> Đưa ra lý do để ủng hộ một Luận Điểm. Biện minh khác với chứng minh, nó thuyết phục bằng lý luận.</li>
+                            <li><strong>Luận Điểm (Claims):</strong> Một khẳng định mà người nói mong muốn người khác đồng ý.</li>
+                            <li><strong>Sự Không Chắc Chắn (Uncertainty):</strong> Chúng ta không tranh luận về những vấn đề đã rõ ràng. Lập luận diễn ra trong các lĩnh vực mà quyết định phải được đưa ra ngay cả khi không chắc chắn.</li>
+                        </ul>
+                        </div></details>
+                        <details><summary>Logic, Biện Chứng, và Hùng Biện</summary><div>
+                        <p>Lập luận bắt nguồn từ ba ngành học cổ xưa:</p>
+                        <ul>
+                            <li><strong>LOGIC:</strong> Quan tâm đến mối quan hệ giữa các mệnh đề trong một lập luận. Logic phi chính thức (informal logic) nhằm nâng cao lý luận bằng ngôn ngữ thông thường.</li>
+                            <li><strong>BIỆN CHỨNG (Dialectic):</strong> Quá trình khám phá và kiểm tra kiến thức thông qua câu hỏi và trả lời. Nó nhấn mạnh vào sự tương tác giữa con người.</li>
+                            <li><strong>HÙNG BIỆN (Rhetoric):</strong> Nghiên cứu về cách các biểu tượng ảnh hưởng đến con người, nhằm đạt được sự đồng thuận của khán giả. Aristotle định nghĩa hùng biện là "khả năng khám phá, trong một trường hợp cụ thể, các phương tiện thuyết phục có sẵn".</li>
+                        </ul>
+                        </div></details>
+                        <details><summary>Các Điều Kiện Tiên Quyết Cho Lập Luận</summary><div>
+                        <p>Lập luận trở thành phương pháp ra quyết định ưu tiên khi năm điều kiện sau được đáp ứng:</p>
+                        <ol>
+                            <li>Sự tồn tại của một tranh cãi thực sự.</li>
+                            <li>Tranh cãi phải thực sự và không tầm thường.</li>
+                            <li>Sự đồng ý của bên còn lại được tìm kiếm.</li>
+                            <li>Sự đồng ý phải tự nguyện.</li>
+                            <li>Không có phương tiện đơn giản hơn để giải quyết sự bất đồng.</li>
+                        </ol>
+                        </div></details>
+                        <details><summary>Những Giả Định Ngầm Của Lập Luận</summary><div>
+                        <ul>
+                            <li><strong>Khán Giả trong Lập Luận:</strong> Lập luận cần bắt đầu từ niềm tin của khán giả. Khái niệm "khán giả phổ quát" của Perelman là tiêu chuẩn mà người lập luận nên nhắm đến.</li>
+                            <li><strong>Sự Không Chắc Chắn:</strong> Lập luận thừa nhận rằng có những quan điểm trái ngược và chúng có thể đúng.</li>
+                            <li><strong>Sự Hợp Tác Trong Tranh Luận:</strong> Dù có vẻ đối kháng, tranh luận là một hoạt động hợp tác để kiểm tra lập luận và tìm ra sự thật.</li>
+                            <li><strong>Rủi Ro Khi Tham Gia Tranh Luận:</strong> Rủi ro bị chứng minh là sai và rủi ro phải thay đổi hệ thống niềm tin.</li>
+                        </ul>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-2",
+                    "title": "Chương 2: Cấu Trúc Lập Luận",
+                    "content": `
+                        <details open><summary>Mô Hình Logic Chính Thức</summary><div>
+                        <p>Mô hình logic chính thức, hay Tam Đoạn Luận Phân Loại, sử dụng các vòng tròn đồng tâm để biểu diễn mối quan hệ giữa các loại. Ví dụ: "Tất cả chính trị gia (P) đều tham nhũng (C); tất cả người tham nhũng (C) nên bị bỏ tù (J); do đó, tất cả chính trị gia (P) nên bị bỏ tù (J)."</p>
+                        <div class="diagram-container">
+                             <svg width="150" height="150" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Outer Circle J -->
+                                <circle cx="50" cy="50" r="45" stroke="black" stroke-width="2" fill="none"/>
+                                <text x="50" y="95" font-family="Inter" font-size="10">J</text>
+                                <!-- Middle Circle C -->
+                                <circle cx="50" cy="50" r="30" stroke="black" stroke-width="2" fill="none"/>
+                                <text x="50" y="75" font-family="Inter" font-size="10">C</text>
+                                <!-- Inner Circle P -->
+                                <circle cx="50" cy="50" r="15" stroke="black" stroke-width="2" fill="none"/>
+                                <text x="50" y="55" font-family="Inter" font-size="10">P</text>
+                            </svg>
+                        </div>
+                        <p>Tuy nhiên, mô hình này hạn chế vì không thể hiện được các mức độ xác suất và không nhạy cảm với bối cảnh.</p>
+                        </div></details>
+                        <details><summary>Mô Hình Toulmin Về Lập Luận Đơn Giản</summary><div>
+                        <p>Nhà triết học Stephen Toulmin đã phát triển một mô hình để phân tích cấu trúc của các lập luận đơn giản, bao gồm ba thành phần chính:</p>
+                        <ul>
+                            <li><strong>Luận Điểm (Claim):</strong> Khẳng định mà bạn muốn khán giả chấp nhận.</li>
+                            <li><strong>Bằng Chứng (Evidence/Data):</strong> Dữ liệu hoặc thông tin được cung cấp để hỗ trợ Luận Điểm.</li>
+                            <li><strong>Cơ Sở Lý Luận (Warrant):</strong> Nguyên tắc hoặc giả định ngầm kết nối Bằng Chứng với Luận Điểm.</li>
+                        </ul>
+                        <p>Nếu Bằng Chứng hoặc Cơ Sở Lý Luận bị thách thức, người lập luận cần cung cấp thêm sự hỗ trợ (Backing).</p>
+                        <div class="diagram-container">
+                            <svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#4B5563" />
+                                    </marker>
+                                </defs>
+                                <rect x="50" y="95" width="100" height="60" fill="#E0E7FF" stroke="#6366F1" stroke-width="2" rx="5"/>
+                                <text x="100" y="128" font-family="Inter" font-size="14" text-anchor="middle" fill="#4338CA">BẰNG CHỨNG</text>
+                                
+                                <rect x="250" y="95" width="100" height="60" fill="#E0E7FF" stroke="#6366F1" stroke-width="2" rx="5"/>
+                                <text x="300" y="128" font-family="Inter" font-size="14" text-anchor="middle" fill="#4338CA">LUẬN ĐIỂM</text>
+                                
+                                <path d="M 150 125 L 250 125" stroke="#4B5563" stroke-width="2" marker-end="url(#arrow)"/>
+                                
+                                <rect x="150" y="170" width="100" height="50" fill="#FEF3C7" stroke="#FBBF24" stroke-width="2" rx="5"/>
+                                <text x="200" y="200" font-family="Inter" font-size="14" text-anchor="middle" fill="#92400E">CƠ SỞ LÝ LUẬN</text>
+                                
+                                <path d="M 200 170 L 200 135" stroke="#D97706" stroke-width="2" stroke-dasharray="4"/>
+                            </svg>
+                        </div>
+                        </div></details>
+                        <details><summary>Vẽ Sơ Đồ Các Lập Luận Phức Tạp</summary><div>
+                        <p>Các lập luận phức tạp đòi hỏi phải thiết lập một hoặc nhiều Luận Điểm Phụ để hỗ trợ Luận Điểm Chính. Có ba cấu trúc chính để liên kết các luận điểm phụ:</p>
+                        <ul>
+                            <li><strong>Cấu Trúc Đa Nhánh (Multiple Structure):</strong> Các Luận Điểm Phụ độc lập với nhau và mỗi luận điểm tự nó có thể củng cố Luận Điểm Chính.</li>
+                            <li><strong>Cấu Trúc Phối Hợp (Coordinative Structure):</strong> Các Luận Điểm Phụ độc lập với nhau nhưng cần kết hợp lại với nhau để thiết lập Luận Điểm Chính. Sức mạnh đến từ sự tích lũy.</li>
+                            <li><strong>Cấu Trúc Phụ Thuộc (Subordinative Structure):</strong> Các Luận Điểm Phụ không độc lập và tạo thành một chuỗi. Nếu một mắt xích bị phá vỡ, toàn bộ lập luận sẽ sụp đổ.</li>
+                        </ul>
+                        <div class="diagram-container">
+                            <svg width="250" height="200" viewBox="0 0 250 200">
+                              <text x="125" y="15" text-anchor="middle" font-size="12" font-weight="bold">Đa Nhánh</text>
+                              <rect x="10" y="30" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="60" y="50" text-anchor="middle" font-size="10">LP Phụ 1</text>
+                              <rect x="10" y="80" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="60" y="100" text-anchor="middle" font-size="10">LP Phụ 2</text>
+                              <rect x="10" y="130" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="60" y="150" text-anchor="middle" font-size="10">LP Phụ 3</text>
+                              <rect x="160" y="80" width="80" height="30" fill="#E0E7FF" stroke="#6366F1"/> <text x="200" y="100" text-anchor="middle" font-size="10">Luận Điểm</text>
+                              <path d="M110 45 L160 95" stroke="black" marker-end="url(#arrow)"/>
+                              <path d="M110 95 L160 95" stroke="black" marker-end="url(#arrow)"/>
+                              <path d="M110 145 L160 95" stroke="black" marker-end="url(#arrow)"/>
+                            </svg>
+                            <svg width="250" height="200" viewBox="0 0 250 200">
+                              <text x="125" y="15" text-anchor="middle" font-size="12" font-weight="bold">Phối Hợp</text>
+                              <rect x="10" y="30" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="60" y="50" text-anchor="middle" font-size="10">LP Phụ 1</text>
+                              <rect x="10" y="80" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="60" y="100" text-anchor="middle" font-size="10">LP Phụ 2</text>
+                              <rect x="10" y="130" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="60" y="150" text-anchor="middle" font-size="10">LP Phụ 3</text>
+                              <rect x="160" y="80" width="80" height="30" fill="#E0E7FF" stroke="#6366F1"/> <text x="200" y="100" text-anchor="middle" font-size="10">Luận Điểm</text>
+                              <path d="M110 45 L130 45 L130 145 L110 145" stroke="black" fill="none"/>
+                              <path d="M130 95 L160 95" stroke="black" marker-end="url(#arrow)"/>
+                            </svg>
+                             <svg width="150" height="200" viewBox="0 0 150 200">
+                              <text x="75" y="15" text-anchor="middle" font-size="12" font-weight="bold">Phụ Thuộc</text>
+                              <rect x="25" y="30" width="100" height="30" fill="#E0E7FF" stroke="#6366F1"/> <text x="75" y="50" text-anchor="middle" font-size="10">Luận Điểm</text>
+                              <rect x="25" y="80" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="75" y="100" text-anchor="middle" font-size="10">LP Phụ 1</text>
+                              <rect x="25" y="130" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/> <text x="75" y="150" text-anchor="middle" font-size="10">LP Phụ 2</text>
+                              <path d="M75 60 L75 80" stroke="black" marker-end="url(#arrow)"/>
+                              <path d="M75 110 L75 130" stroke="black" marker-end="url(#arrow)"/>
+                            </svg>
+                        </div>
+                        <blockquote>Việc nhận biết các cấu trúc này giúp chúng ta hiểu rõ hơn về cách xây dựng, tấn công và bảo vệ một lập luận phức tạp.</blockquote>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-3",
+                    "title": "Chương 3: Sự Hình Thành Của Tranh Cãi",
+                    "content": `
+                        <details open><summary>Sự Xuất Hiện Của Tranh Cãi</summary><div>
+                        <p>Tranh cãi là một bối cảnh giao tiếp được đặc trưng bởi năm đặc điểm:</p>
+                        <ol>
+                            <li>Mọi người nhận ra rằng họ có sự bất đồng.</li>
+                            <li>Sự bất đồng không phải là nhỏ nhặt.</li>
+                            <li>Mỗi người mong muốn sự đồng thuận từ người khác.</li>
+                            <li>Sự đồng thuận chỉ có giá trị khi nó tự nguyện.</li>
+                            <li>Không có cách nào dễ dàng để giải quyết tranh chấp.</li>
+                        </ol>
+                        </div></details>
+                        <details><summary>Vấn Đề, Luận Điểm, Giải Pháp và Điểm Luận (Topoi)</summary><div>
+                        <ul>
+                            <li><strong>Vấn Đề (Issues):</strong> Những câu hỏi phụ nảy sinh trong cuộc tranh cãi và đóng vai trò quan trọng đối với thành công của người biện hộ.</li>
+                            <li><strong>Luận Điểm (Claims):</strong> Những khẳng định mà người lập luận đưa ra và mong muốn khán giả chấp nhận. Có 4 loại chính: Sự Kiện, Định Nghĩa, Giá Trị, và Chính Sách.</li>
+                            <li><strong>Giải Pháp (Resolution):</strong> Luận Điểm chính trong một tranh cãi, trả lời câu hỏi tổng quát được đặt ra bởi tranh cãi.</li>
+                            <li><strong>Điểm Luận (Topoi):</strong> Những "câu hỏi dẫn dắt" giúp tìm kiếm các vấn đề liên quan đến một loại luận điểm cụ thể. Ví dụ, với Luận Điểm Chính Sách, các topoi là: Vấn đề (Ill), Trách nhiệm (Blame), Giải pháp (Cure), và Chi phí (Cost).</li>
+                        </ul>
+                        <div class="diagram-container">
+                            <svg width="450" height="200" viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4B5563" /></marker></defs>
+                                <rect x="10" y="85" width="100" height="30" fill="#FEF3C7" stroke="#FBBF24" rx="5"/><text x="60" y="104" font-size="12" text-anchor="middle">TRANH CÃI</text>
+                                <rect x="340" y="85" width="100" height="30" fill="#E0E7FF" stroke="#6366F1" rx="5"/><text x="390" y="104" font-size="12" text-anchor="middle">GIẢI PHÁP</text>
+                                <path d="M110 100 L 150 100" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+                                <path d="M300 100 L 340 100" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+                                <rect x="170" y="20" width="110" height="30" fill="#FFFBEB" stroke="#FBBF24" rx="5"/><text x="225" y="39" font-size="12" text-anchor="middle">VẤN ĐỀ 1</text>
+                                <rect x="170" y="85" width="110" height="30" fill="#FFFBEB" stroke="#FBBF24" rx="5"/><text x="225" y="104" font-size="12" text-anchor="middle">VẤN ĐỀ 2</text>
+                                <rect x="170" y="150" width="110" height="30" fill="#FFFBEB" stroke="#FBBF24" rx="5"/><text x="225" y="169" font-size="12" text-anchor="middle">VẤN ĐỀ 3</text>
+                                <path d="M150 100 L 170 35" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+                                <path d="M150 100 L 170 100" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+                                <path d="M150 100 L 170 165" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+                            </svg>
+                        </div>
+                        </div></details>
+                        <details><summary>Điểm Kết Thúc, Giả Thiết Ban Đầu, và Trách Nhiệm Chứng Minh</summary><div>
+                        <ul>
+                            <li><strong>Điểm Kết Thúc (Stasis):</strong> Điểm trọng tâm mà cuộc tranh luận xoay quanh. Có 4 loại: Phỏng Đoán (sự việc có xảy ra không?), Định Nghĩa (nó là gì?), Chất Lượng (nó có chính đáng không?), và Nơi Chốn (thẩm quyền).</li>
+                            <li><strong>Giả Thiết Ban Đầu (Presumption):</strong> Xác định bên nào phải khởi xướng tranh luận. Bên có lợi thế từ Giả Thiết Ban Đầu không cần phải bắt đầu.</li>
+                            <li><strong>Trách Nhiệm Chứng Minh (Burden of Proof):</strong> Trách nhiệm của bên biện hộ phải chứng minh rằng lập luận của họ đúng. Nó thuộc về bên không có lợi thế từ Giả Thiết Ban Đầu.</li>
+                        </ul>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-4",
+                    "title": "Chương 4: Bằng Chứng Trong Lập Luận",
+                    "content": `
+                        <details open><summary>Các Loại Bằng Chứng</summary><div>
+                        <p>Có ba loại bằng chứng chính:</p>
+                        <ol>
+                            <li><strong>Dữ Liệu Khách Quan:</strong> Những luận điểm có thể được kiểm chứng độc lập. Bao gồm:
+                                <ul>
+                                    <li><strong>Ví dụ:</strong> Các trường hợp cụ thể để minh họa.</li>
+                                    <li><strong>Số Liệu Thống Kê:</strong> Dữ liệu định lượng như số liệu thô, phần trăm, tỷ lệ, chỉ số, và các thước đo khuynh hướng tập trung (trung bình, trung vị, số mô).</li>
+                                    <li><strong>Vật Thể Hữu Hình và Tài Liệu:</strong> Các vật thực tế hoặc tài liệu liên quan trực tiếp.</li>
+                                    <li><strong>Quan Sát Trực Tiếp:</strong> Báo cáo từ việc quan sát một sự kiện.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Sự Đồng Thuận Xã Hội:</strong> Những luận điểm không thể xác minh độc lập nhưng được chấp nhận rộng rãi. Bao gồm các quan niệm chung, phán xét giá trị được chia sẻ, và các hiểu biết lịch sử chung.</li>
+                            <li><strong>Lời Chứng Thực (Testimony):</strong> Những khẳng định từ những người được coi là đáng tin cậy. Độ tin cậy dựa trên chuyên môn và hồ sơ thành tích.</li>
+                        </ol>
+                        </div></details>
+                        <details><summary>Đánh Giá Bằng Chứng</summary><div>
+                        <p>James A. Herrick đề xuất bảy tiêu chuẩn chung để đánh giá bằng chứng:</p>
+                        <ul>
+                            <li><strong>Tính Khả Dụng:</strong> Bằng chứng có sẵn để kiểm tra không?</li>
+                            <li><strong>Độ Tin Cậy:</strong> Nguồn cung cấp có đáng tin cậy không?</li>
+                            <li><strong>Tính Nhất Quán Nội Bộ:</strong> Bằng chứng có tự mâu thuẫn không?</li>
+                            <li><strong>Tính Nhất Quán Bên Ngoài:</strong> Bằng chứng có mâu thuẫn với các nguồn đáng tin cậy khác không?</li>
+                            <li><strong>Tính Kịp Thời:</strong> Bằng chứng có còn cập nhật không?</li>
+                            <li><strong>Sự Liên Quan:</strong> Bằng chứng có liên quan trực tiếp đến kết luận không?</li>
+                            <li><strong>Sự Đầy Đủ:</strong> Bằng chứng có đủ để hỗ trợ luận điểm không?</li>
+                        </ul>
+                        <p>Khi đánh giá bằng chứng trên Internet, cần thêm các biện pháp phòng ngừa như xác định người tạo, mục đích, và tính học thuật của trang web.</p>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-5",
+                    "title": "Chương 5: Các Mô Hình Lập Luận",
+                    "content": `
+                        <details open><summary>Tổng Quan Về Các Mô Hình Lập Luận</summary><div>
+                        <p>Các mô hình lập luận (Argument Schemes) là các mẫu suy luận kết nối bằng chứng với luận điểm. Mỗi mô hình có một cơ sở lý luận (warrant) riêng. Chúng ta sẽ xem xét sáu mô hình chính.</p>
+                        </div></details>
+                        <details><summary>1. Lập Luận Từ Ví Dụ</summary><div>
+                        <p>Suy luận dựa trên mối quan hệ giữa các phần và toàn thể. Có hai loại:</p>
+                        <ul>
+                            <li><strong>Khái Quát Hóa (Generalization):</strong> Đi từ cụ thể đến tổng quát. Cần kiểm tra xem số lượng ví dụ có đủ và có đại diện không.</li>
+                            <li><strong>Minh Họa (Illustration):</strong> Đi từ tổng quát đến cụ thể.</li>
+                        </ul>
+                        </div></details>
+                        <details><summary>2. Lập Luận Từ Phép So Sánh Tương Đồng (Analogy)</summary><div>
+                        <p>Suy luận dựa trên sự giống nhau. Có hai loại:</p>
+                        <ul>
+                            <li><strong>So Sánh Tương Đồng Trực Tiếp:</strong> So sánh các đối tượng cùng loại.</li>
+                            <li><strong>So Sánh Tương Đồng Ẩn Dụ:</strong> So sánh các đối tượng khác loại, tập trung vào mối quan hệ giữa chúng.</li>
+                        </ul>
+                        <p>Cần kiểm tra xem các điểm tương đồng có quan trọng hơn các điểm khác biệt không.</p>
+                        </div></details>
+                        <details><summary>3. Lập Luận Từ Dấu Hiệu Nhận Biết (Sign)</summary><div>
+                        <p>Suy luận dựa trên sự xuất hiện đồng thời của hai yếu tố. Một dấu hiệu cho phép suy ra sự tồn tại của một sự việc khác. Cần kiểm tra xem dấu hiệu có thể tồn tại mà không có điều nó biểu thị không, và liệu có cách giải thích nào khác hợp lý hơn không.</p>
+                        </div></details>
+                        <details><summary>4. Lập Luận Từ Nguyên Nhân (Cause)</summary><div>
+                        <p>Suy luận dựa trên sự ảnh hưởng của một yếu tố lên yếu tố khác. Có hai loại:</p>
+                        <ul>
+                            <li><strong>Giải Thích:</strong> Tìm nguyên nhân cho một hiệu ứng đã xảy ra.</li>
+                            <li><strong>Dự Đoán:</strong> Dự báo hiệu ứng từ các nguyên nhân đã biết.</li>
+                        </ul>
+                        <p>Cần cẩn thận với lỗi suy luận hậu quả (post hoc) và xem xét các nguyên nhân thay thế.</p>
+                        </div></details>
+                        <details><summary>5. Lập Luận Từ Lời Chứng Thực (Testimony)</summary><div>
+                        <p>Suy luận dựa trên khẳng định từ một nguồn đáng tin cậy. Cần kiểm tra xem nguồn có phải là chuyên gia, có cơ sở cho luận điểm, và có thiên vị không.</p>
+                        </div></details>
+                        <details><summary>6. Lập Luận Theo Mẫu Cấu Trúc (Form)</summary><div>
+                        <p>Suy luận dựa trên cảm giác dự đoán hoặc sự hoàn tất mà một hình thức tạo ra. Ví dụ: lập luận gần giống toán học, gần giống logic, hoặc tường thuật. Cần kiểm tra xem hình thức có được áp dụng đúng cách và có mạch lạc không.</p>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-6",
+                    "title": "Chương 6: Ngụy Biện - Các Lỗi Lập Luận",
+                    "content": `
+                        <details open><summary>Hiểu Về Ngụy Biện</summary><div>
+                        <p><strong>Ngụy biện (Fallacy)</strong> là những lập luận không hợp lệ, trong đó mối quan hệ giữa bằng chứng và kết luận bị sai lệch hoặc không chặt chẽ. Ngụy biện chỉ đến sự thiếu sót trong suy luận, không phải lỗi về tính đúng sai của bằng chứng.</p>
+                        </div></details>
+                        <details><summary>Các Loại Ngụy Biện Phổ Biến</summary><div>
+                        <h4>1. Ngụy Biện Về Các Loại Căn Cứ Cụ Thể</h4>
+                        <ul>
+                            <li><strong>Khái quát hóa vội vàng:</strong> Suy luận từ quá ít ví dụ.</li>
+                            <li><strong>Ngụy biện thành phần/phân chia:</strong> Cho rằng điều đúng với phần cũng đúng với toàn thể, và ngược lại.</li>
+                            <li><strong>Tương đồng sai:</strong> So sánh các đối tượng khác nhau ở những điểm quan trọng.</li>
+                            <li><strong>Nhầm lẫn dấu hiệu và nguyên nhân:</strong> Coi sự tương quan là mối quan hệ nhân quả.</li>
+                            <li><strong>Hậu quả sau (Post hoc):</strong> Cho rằng sự kiện A gây ra B chỉ vì A xảy ra trước B.</li>
+                        </ul>
+                        <h4>2. Ngụy Biện Về Sự Rõ Ràng</h4>
+                        <ul>
+                            <li><strong>Sự mơ hồ (Vagueness):</strong> Thuật ngữ không có ý nghĩa rõ ràng.</li>
+                            <li><strong>Sự đa nghĩa (Ambiguity):</strong> Một từ có nhiều nghĩa khác nhau.</li>
+                            <li><strong>Đánh tráo khái niệm (Equivocation):</strong> Nghĩa của từ thay đổi trong quá trình lập luận.</li>
+                        </ul>
+                        <h4>3. Ngụy Biện Về Sự Liên Quan</h4>
+                        <ul>
+                            <li><strong>Tấn công cá nhân (Ad Hominem):</strong> Tấn công người đưa ra lập luận thay vì chính lập luận đó.</li>
+                            <li><strong>Dựa vào thẩm quyền (Ad Verecundiam):</strong> Viện dẫn một thẩm quyền không liên quan.</li>
+                            <li><strong>Kêu gọi đám đông (Ad Populum):</strong> Dựa vào ý kiến số đông.</li>
+                            <li><strong>Kêu gọi sự sợ hãi (Ad Baculum):</strong> Dùng đe dọa để ép buộc.</li>
+                            <li><strong>Kêu gọi lòng thương hại (Ad Misericordiam):</strong> Dựa trên cảm xúc thương hại.</li>
+                        </ul>
+                        <h4>4. Ngụy Biện "Trống Rỗng"</h4>
+                        <ul>
+                            <li><strong>Lập luận vòng vo:</strong> Lặp lại luận điểm ban đầu mà không có bằng chứng mới.</li>
+                            <li><strong>Tiền đề không được chứng minh:</strong> Giả định điều cần chứng minh là đúng.</li>
+                            <li><strong>Đánh lạc hướng (Red Herring):</strong> Chuyển hướng sang một vấn đề không liên quan.</li>
+                            <li><strong>Ngụy tạo (Straw Man):</strong> Bóp méo quan điểm đối phương để dễ phản bác.</li>
+                        </ul>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-7",
+                    "title": "Chương 7: Xây Dựng Lập Luận",
+                    "content": `
+                        <details open><summary>Xây Dựng Lập Luận Ban Đầu (Prima Facie)</summary><div>
+                        <p>Trách nhiệm đầu tiên của người bào chữa là trình bày một <strong>Lập Luận Ban Đầu (prima facie case)</strong> — một lập luận mà khi được nghe lần đầu, không bị phản đối, sẽ đủ thuyết phục người có lý trí về giá trị của giải pháp. Để xây dựng, bạn cần:</p>
+                        <ol>
+                            <li><strong>Xác Định Vấn Đề:</strong> Dùng phân tích thuật ngữ, xem xét bối cảnh, hoặc dùng khái niệm Điểm Luận (Topoi) để tìm ra các câu hỏi cốt lõi.</li>
+                            <li><strong>Lựa Chọn Luận Điểm:</strong> Chọn những luận điểm mạnh nhất, dễ chứng minh và có tác động lớn đến luận điểm chính. Tránh các luận điểm yếu, khó chứng minh, hoặc mâu thuẫn.</li>
+                            <li><strong>Lựa chọn Bằng Chứng Hỗ Trợ:</strong> Chọn bằng chứng liên quan, đáng tin cậy, súc tích và kịp thời để củng cố cho từng luận điểm.</li>
+                            <li><strong>Sắp Xếp Luận Điểm:</strong> Sử dụng các cấu trúc (Đa Nhánh, Phối Hợp, Phụ Thuộc) và các mẫu tổ chức (thời gian, không gian, vấn đề-giải pháp) một cách hợp lý để tăng tính thuyết phục.</li>
+                        </ol>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-8",
+                    "title": "Chương 8: Tấn Công và Phòng Thủ",
+                    "content": `
+                        <details open><summary>Tấn Công Lập Luận</summary><div>
+                        <p>Mục tiêu của tấn công là làm suy yếu lập luận của đối phương. Các lựa chọn chiến lược bao gồm:</p>
+                        <ul>
+                            <li><strong>Những Lập Luận Nào Cần Tấn Công?</strong> Phụ thuộc vào cấu trúc lập luận của đối phương (Phụ thuộc, Đa nhánh, Phối hợp).</li>
+                            <li><strong>Tấn Công Bước Nào?</strong> Có thể tấn công vào Luận điểm, Bằng chứng, Cơ sở lý luận, hoặc bối cảnh cơ bản của lập luận.</li>
+                            <li><strong>Các Loại Tấn Công:</strong> Đặt câu hỏi, xác định thiếu sót nội tại, chỉ ra mâu thuẫn, dán nhãn chiến lược, phản biện trực tiếp, hoặc tái định vị bối cảnh.</li>
+                        </ul>
+                        </div></details>
+                        <details><summary>Phòng Thủ Lập Luận</summary><div>
+                        <p>Mục tiêu của phòng thủ là phục hồi và củng cố lập luận đã bị tấn công. Các lựa chọn chiến lược bao gồm:</p>
+                        <ul>
+                            <li><strong>Chứng minh cuộc tấn công không áp dụng được.</strong></li>
+                            <li><strong>Chứng minh cuộc tấn công không đáng kể.</strong></li>
+                            <li><strong>Chứng minh cuộc tấn công chưa được thiết lập đầy đủ.</strong></li>
+                            <li><strong>Chỉ ra rằng cuộc tấn công là sai lầm.</strong></li>
+                        </ul>
+                        <p>Người phòng thủ có thể quay lại cấu trúc lập luận ban đầu hoặc theo cấu trúc của cuộc tấn công để đáp trả.</p>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-9",
+                    "title": "Chương 9: Ngôn Ngữ, Phong Cách, và Trình Bày",
+                    "content": `
+                        <details open><summary>Vai Trò Của Ngôn Ngữ</summary><div>
+                        <p>Ngôn ngữ không chỉ là công cụ "thêm vào" mà là một phần thiết yếu của lập luận, định hình ý nghĩa và cách khán giả phản ứng. Các yếu tố ngôn ngữ quan trọng bao gồm:</p>
+                        <ul>
+                            <li><strong>Tính Nhất Quán:</strong> Duy trì cùng một cách sử dụng và ý nghĩa của từ ngữ xuyên suốt lập luận.</li>
+                            <li><strong>Định Nghĩa:</strong> Sử dụng định nghĩa để làm rõ, chuẩn hóa, hoặc thuyết phục. "Định nghĩa thuyết phục" thay đổi nghĩa bóng của một thuật ngữ để tạo ra liên tưởng tích cực hoặc tiêu cực.</li>
+                            <li><strong>Sự Phân Tách (Dissociation):</strong> Tách một khái niệm thành hai phần để ưu tiên một phần hơn. Ví dụ: tách "vẻ bề ngoài" khỏi "thực tế".</li>
+                        </ul>
+                        </div></details>
+                        <details><summary>Phong Cách và Trình Bày</summary><div>
+                        <ul>
+                            <li><strong>Biện Pháp Tu Từ (Figures of Speech):</strong> Các mẫu ngôn ngữ như ẩn dụ, so sánh, nhân hóa giúp lập luận sống động và dễ nhớ hơn.</li>
+                            <li><strong>Sự Không Chính Xác Chiến Lược:</strong> Đôi khi, sự mơ hồ có thể được sử dụng một cách chiến lược để tạo sự đồng thuận hoặc tránh né xung đột.</li>
+                            <li><strong>Cường Độ Ngôn Ngữ:</strong> Mức độ cảm xúc của ngôn ngữ có thể ảnh hưởng đến khán giả, nhưng cần phù hợp với bối cảnh và niềm tin của họ.</li>
+                            <li><strong>Hình Thức Trình Bày:</strong> Lập luận có thể được trình bày qua văn viết, lời nói, hoặc hình ảnh, mỗi hình thức có những ưu và nhược điểm riêng.</li>
+                        </ul>
+                        </div></details>
+                    `
+                },
+                {
+                    "id": "chuong-10",
+                    "title": "Chương 10: Chúng Ta Tranh Luận Ở Đâu và Tại Sao?",
+                    "content": `
+                        <details open><summary>Bối Cảnh Của Lập Luận</summary><div>
+                        <p>Lập luận không diễn ra trong chân không mà trong các bối cảnh cụ thể được gọi là "không gian" hoặc "diễn đàn". G. Thomas Goodnight đã xác định ba không gian chính:</p>
+                        <ul>
+                            <li><strong>Không Gian Cá Nhân (Personal Sphere):</strong> Diễn ra trong các mối quan hệ riêng tư, không trang trọng. Các quy tắc thường ngầm định và linh hoạt.</li>
+                            <li><strong>Không Gian Kỹ Thuật (Technical Sphere):</strong> Dành cho các chuyên gia trong một lĩnh vực cụ thể (luật, y học, khoa học). Các quy tắc nghiêm ngặt và yêu cầu kiến thức chuyên môn.</li>
+                            <li><strong>Không Gian Công Cộng (Public Sphere):</strong> Dành cho các công dân thảo luận về các vấn đề chung. Lập luận dựa trên các giá trị và niềm tin được chia sẻ rộng rãi.</li>
+                        </ul>
+                        <p>Sự suy giảm của không gian công cộng là một mối lo ngại, khi các vấn đề công cộng ngày càng bị chuyển sang không gian kỹ thuật hoặc cá nhân, làm giảm khả năng thảo luận và ra quyết định tập thể.</p>
+                        </div></details>
+                        <details><summary>Tại Sao Chúng Ta Lập Luận?</summary><div>
+                        <p>Chúng ta lập luận vì nhiều lý do, vượt ra ngoài mục tiêu trước mắt là thuyết phục người khác. Lập luận giúp chúng ta:</p>
+                        <ul>
+                            <li><strong>Ra Quyết Định Tốt Hơn:</strong> Bằng cách kiểm tra các ý tưởng và bằng chứng, chúng ta có thể đi đến những kết luận hợp lý hơn.</li>
+                            <li><strong>Hiểu Rõ Hơn Về Bản Thân:</strong> Quá trình lập luận buộc chúng ta phải làm rõ và biện minh cho niềm tin của chính mình.</li>
+                            <li><strong>Phát Triển Tư Duy Phản Biện:</strong> Rèn luyện kỹ năng phân tích, đánh giá, và xây dựng lập luận.</li>
+                            <li><strong>Tham Gia Vào Xã Hội Dân Chủ:</strong> Lập luận là nền tảng của một xã hội dân chủ, nơi các công dân tham gia vào việc định hình chính sách công.</li>
+                        </ul>
+                        </div></details>
+                    `
+                },
+                 {
+                    "id": "phu-luc",
+                    "title": "Phụ Lục: Học Lập Luận Qua Tranh Luận",
+                    "content": `
+                        <details open><summary>Tranh Luận Học Thuật</summary><div>
+                        <p>Tranh luận là một hoạt động có tổ chức, một cách hiệu quả để học về lập luận. Các đặc điểm chính bao gồm:</p>
+                        <ul>
+                            <li><strong>Nghị Quyết Tranh Luận:</strong> Luận điểm trung tâm của cuộc tranh luận, thường là về chính sách hoặc giá trị.</li>
+                            <li><strong>Các Bên và Nhiệm Vụ:</strong> Bên ủng hộ (affirmative) trình bày lập luận ủng hộ nghị quyết, trong khi bên phản đối (negative) cố gắng tạo ra sự nghi ngờ. Bên ủng hộ có gánh nặng chứng minh.</li>
+                            <li><strong>Định Dạng Tranh Luận:</strong> Thời gian được xác định trước và phân chia đều. Các bài phát biểu bao gồm bài xây dựng (constructive) và bài phản bác (rebuttal).</li>
+                            <li><strong>Chuẩn Bị và Đánh Giá:</strong> Việc chuẩn bị bao gồm phân tích, nghiên cứu, và xây dựng lập luận. Giám khảo đánh giá dựa trên kỹ năng lập luận, không phải quan điểm cá nhân.</li>
+                        </ul>
+                        </div></details>
+                    `
+                }
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocNav = document.getElementById('toc-nav');
+            const contentDisplay = document.getElementById('content-display');
+            const searchInput = document.getElementById('search-input');
+            const menuButton = document.getElementById('menu-button');
+            const sidebar = document.getElementById('toc-sidebar');
+            const overlay = document.getElementById('overlay');
+            const versionInfo = document.getElementById('version-info');
+            
+            let originalContent = '';
+            let searchTimeout;
+
+            // Set version and date
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            versionInfo.textContent = `Phiên bản 2.1 - Cập nhật lần cuối: ${today.toLocaleDateString('vi-VN', options)}`;
+
+
+            // Render Table of Contents
+            const renderTOC = () => {
+                const ul = document.createElement('ul');
+                ul.className = 'space-y-2';
+                bookData.chapters.forEach(chapter => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = `#${chapter.id}`;
+                    a.textContent = chapter.title;
+                    a.className = 'block px-4 py-2 text-gray-700 rounded-md hover:bg-orange-100 hover:text-orange-600 transition-colors';
+                    a.onclick = (e) => {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(a.getAttribute('href'));
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                        if (window.innerWidth < 768) {
+                            sidebar.classList.remove('open');
+                            overlay.classList.add('hidden');
+                        }
+                    };
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+                tocNav.innerHTML = ''; // Clear previous TOC
+                tocNav.appendChild(ul);
+            };
+
+            // Render all chapters
+            const renderAllChapters = () => {
+                let html = '';
+                bookData.chapters.forEach(chapter => {
+                    html += `<section id="${chapter.id}" class="mb-12 scroll-mt-20">`;
+                    html += `<h2>${chapter.title}</h2>`;
+                    html += chapter.content;
+                    html += `</section>`;
+                });
+                contentDisplay.innerHTML = html;
+                originalContent = contentDisplay.innerHTML;
+            };
+
+            // Debounce function to limit how often search runs
+            const debounce = (func, delay) => {
+                return (...args) => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        func.apply(this, args);
+                    }, delay);
+                };
+            };
+            
+            // Search functionality
+            const handleSearch = () => {
+                const query = searchInput.value.trim().toLowerCase();
+                
+                // Restore original content if search is cleared
+                if (!query) {
+                    contentDisplay.innerHTML = originalContent;
+                    return;
+                }
+
+                // Create a fresh copy to search on
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = originalContent;
+                
+                const walker = document.createTreeWalker(tempDiv, NodeFilter.SHOW_TEXT, null, false);
+                let node;
+                const textNodes = [];
+                while(node = walker.nextNode()) {
+                    if (node.parentElement.tagName !== 'SCRIPT' && node.parentElement.tagName !== 'STYLE') {
+                       textNodes.push(node);
+                    }
+                }
+
+                textNodes.forEach(node => {
+                    const text = node.nodeValue;
+                    const lowerText = text.toLowerCase();
+                    if (lowerText.includes(query)) {
+                        const regex = new RegExp(`(${query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'gi');
+                        const fragment = document.createDocumentFragment();
+                        let lastIndex = 0;
+                        
+                        text.replace(regex, (match, ...args) => {
+                            const offset = args[args.length - 2];
+                            const precedingText = text.substring(lastIndex, offset);
+                            if (precedingText) {
+                                fragment.appendChild(document.createTextNode(precedingText));
+                            }
+                            const span = document.createElement('span');
+                            span.className = 'highlight';
+                            span.textContent = match;
+                            fragment.appendChild(span);
+                            lastIndex = offset + match.length;
+                        });
+
+                        const remainingText = text.substring(lastIndex);
+                        if(remainingText){
+                            fragment.appendChild(document.createTextNode(remainingText));
+                        }
+                        
+                        if (node.parentNode) {
+                           node.parentNode.replaceChild(fragment, node);
+                        }
+                    }
+                });
+
+                contentDisplay.innerHTML = tempDiv.innerHTML;
+                
+                const highlightedElements = contentDisplay.getElementsByClassName('highlight');
+                if(highlightedElements.length > 0){
+                   highlightedElements[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            };
+
+            // Active TOC link on scroll
+            const handleScroll = () => {
+                const sections = document.querySelectorAll('#content-display section');
+                const tocLinks = document.querySelectorAll('#toc-nav a');
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                tocLinks.forEach(link => {
+                    link.classList.remove('bg-orange-500', 'text-white', 'font-bold');
+                    link.classList.add('text-gray-700');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('bg-orange-500', 'text-white', 'font-bold');
+                        link.classList.remove('text-gray-700');
+                    }
+                });
+            };
+
+            // Mobile menu toggle
+            const toggleMenu = () => {
+                sidebar.classList.toggle('open');
+                overlay.classList.toggle('hidden');
+            };
+
+            // Event Listeners
+            searchInput.addEventListener('input', debounce(handleSearch, 300));
+            window.addEventListener('scroll', handleScroll);
+            menuButton.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+
+            // Initial render
+            renderTOC();
+            renderAllChapters();
+            handleScroll();
+        });
+    </script>
+</body>
+</html>
