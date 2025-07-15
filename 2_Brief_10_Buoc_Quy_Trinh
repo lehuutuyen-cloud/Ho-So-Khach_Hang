@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy Trình Lập Luận Chuẩn Chỉnh (Nâng Cấp V5.7)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .step-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .step-card:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            transform: translateY(-2px);
+        }
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        .step-icon {
+            font-size: 2rem;
+            margin-right: 12px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: start;
+            margin-top: 12px;
+        }
+        .checklist-item .icon {
+            margin-right: 10px;
+            margin-top: 5px;
+            color: #4f46e5;
+        }
+        .stasis-level {
+            border-left: 3px solid #4f46e5;
+            padding-left: 16px;
+            margin-top: 12px;
+        }
+        .hook-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+        .code-block {
+            background-color: #1f2937;
+            color: #d1d5db;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .argument-map ul {
+            padding-left: 20px;
+            border-left: 2px solid #e5e7eb; /* Gray border */
+        }
+        .argument-map li {
+            position: relative;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .argument-map li::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 12px;
+            width: 15px;
+            height: 2px;
+            background-color: #e5e7eb;
+        }
+        .diagram-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f9fafb;
+            border-radius: 8px;
+        }
+        .diagram {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header Navigation (Optimized) -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                    <div class="text-xl sm:text-2xl font-extrabold text-orange-600">
+                        FLOWMAKER<span class="align-top text-base sm:text-lg font-normal">™</span>
+                    </div>
+                </a>
+                <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base bg-indigo-600 text-white font-semibold px-3 py-2 sm:px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300">
+                    Về Website Chính
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 tracking-tight">Brief Lập Luận - Conent Marketing</h1>
+            <p class="mt-2 text-lg text-indigo-600 font-semibold">(Nâng Cấp Theo phiên bản v5.7 | Ngày 13 tháng 7 năm 2025)</p>
+            <p class="mt-6 max-w-2xl mx-auto text-gray-700">Đừng chỉ tạo nội dung, hãy dẫn dắt tư duy. Bộ brief này là bản đồ chiến lược giúp bạn xây dựng lập luận sắc bén – đủ sức thay đổi niềm tin, tạo cảm xúc, và khiến người xem hành động, dù chỉ trong một video ngắn hay bài viết dài.</p>
+        </header>
+
+        <!-- Step 1: Central Claim -->
+        <section class="step-card" id="step1">
+            <div class="flex items-center">
+                <span class="step-icon">🎯</span>
+                <h2 class="step-title">1. Luận Điểm Trung Tâm (Central Claim)</h2>
+            </div>
+            <p class="text-gray-600">Viết một câu khẳng định rõ ràng – là điều bạn muốn khán giả tin vào.</p>
+            <div class="mt-4 space-y-2">
+                <div class="flex items-center text-green-600">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Có khả năng tranh luận (không quá hiển nhiên)</span>
+                </div>
+                <div class="flex items-center text-green-600">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>Dẫn đến hành động hoặc thay đổi quan điểm</span>
+                </div>
+            </div>
+            <div class="mt-6 border-t pt-4">
+                <h4 class="font-bold text-gray-700">❓ Câu hỏi kiểm tra:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                    <li>Có ai phản đối quan điểm này không?</li>
+                    <li>Nếu người ta tin vào điều này thì họ sẽ làm gì khác đi?</li>
+                </ul>
+                <p class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-gray-700 italic"><strong>Ví dụ:</strong> “Nội dung lan truyền (viral) không cần chạy quảng cáo – nếu nó đúng cảm xúc gốc của thị trường.”</p>
+            </div>
+        </section>
+
+        <!-- Step 2: Strategic Hook Point -->
+        <section class="step-card" id="step2">
+            <div class="flex items-center">
+                <span class="step-icon">🎣</span>
+                <h2 class="step-title">2. Điểm Móc Chiến Lược (Strategic Hook Point)</h2>
+            </div>
+            <p class="text-gray-600">Nếu 3 giây đầu thất bại, các bước chuẩn bị phía sau sẽ vô nghĩa. Sau khi có Luận Điểm, hãy thiết kế một "Điểm Móc" (Hook Point) - một điểm nhấn (văn bản, hình ảnh, insight...) để chinh phục sự chú ý của khán giả ngay lập tức.</p>
+            <div class="mt-6 border-t pt-4">
+                <h3 class="font-bold text-lg text-indigo-700">MA TRẬN KẾT HỢP ĐIỂM MÓC & LUẬN ĐIỂM</h3>
+                <p class="text-gray-500 text-sm mb-4">Một Điểm Móc hiệu quả không phải là ngẫu nhiên. Nó là "mũi nhọn" của một lập luận có chủ đích. Hãy chọn loại Điểm Móc phù hợp nhất với loại Luận Điểm bạn muốn truyền tải.</p>
+                <div class="space-y-4">
+                    <div class="hook-card">
+                        <h4 class="font-bold text-gray-800">Điểm Móc "Gây tranh cãi / Phản biện"</h4>
+                        <p class="text-sm text-gray-500">Thách thức một niềm tin cố hữu của khán giả.</p>
+                        <p class="mt-2 text-gray-700"><strong>Phù hợp nhất với:</strong> <span class="font-semibold text-indigo-600">Luận điểm Giá trị (Value Claim) & Định nghĩa (Definition Claim).</span></p>
+                        <p class="text-sm text-gray-600 italic mt-1"><strong>Ví dụ:</strong> "Bạn nghĩ 'xây dựng thương hiệu' chỉ là logo? Sai rồi, nó thực sự là cảm nhận của khách hàng về bạn." (Tấn công định nghĩa cũ để đưa ra định nghĩa mới).</p>
+                    </div>
+                    <div class="hook-card">
+                        <h4 class="font-bold text-gray-800">Điểm Móc "Đặt câu hỏi trực diện"</h4>
+                        <p class="text-sm text-gray-500">Tạo ra "khoảng trống tò mò" và sự đồng cảm tức thì.</p>
+                        <p class="mt-2 text-gray-700"><strong>Phù hợp nhất với:</strong> <span class="font-semibold text-indigo-600">Luận điểm Chính sách (Policy Claim).</span></p>
+                        <p class="text-sm text-gray-600 italic mt-1"><strong>Ví dụ:</strong> "Làm gì khi quảng cáo mãi không ra đơn?" (Mở đường trực tiếp cho một video hướng dẫn các bước cần làm).</p>
+                    </div>
+                    <div class="hook-card">
+                        <h4 class="font-bold text-gray-800">Điểm Móc "Hứa hẹn lợi ích / Tiết lộ bí mật"</h4>
+                        <p class="text-sm text-gray-500">Đánh vào mong muốn có được lối tắt, một phương pháp nhanh hơn, tốt hơn.</p>
+                        <p class="mt-2 text-gray-700"><strong>Phù hợp nhất với:</strong> <span class="font-semibold text-indigo-600">Luận điểm Chính sách (Policy Claim) & Sự kiện (Fact Claim).</span></p>
+                        <p class="text-sm text-gray-600 italic mt-1"><strong>Ví dụ:</strong> "Bí mật mà các chuyên gia không muốn bạn biết về thuật toán..." (Hứa hẹn một sự thật bị che giấu).</p>
+                    </div>
+                    <div class="hook-card">
+                        <h4 class="font-bold text-gray-800">Điểm Móc "Gây sốc / Bất ngờ"</h4>
+                        <p class="text-sm text-gray-500">Gây gián đoạn dòng suy nghĩ bằng một tuyên bố hoặc hình ảnh ngoài dự đoán.</p>
+                        <p class="mt-2 text-gray-700"><strong>Phù hợp nhất với:</strong> <span class="font-semibold text-indigo-600">Luận điểm Sự kiện (Fact Claim).</span></p>
+                        <p class="text-sm text-gray-600 italic mt-1"><strong>Ví dụ:</strong> "Sự thật: 90% quảng cáo Facebook thất bại trong 7 ngày đầu tiên." (Một thống kê khó tin).</p>
+                    </div>
+                     <div class="hook-card">
+                        <h4 class="font-bold text-gray-800">Điểm Móc "Sợ bỏ lỡ" (FOMO)</h4>
+                        <p class="text-sm text-gray-500">Kích hoạt nỗi sợ bị tụt hậu, mất đi một cơ hội hoặc thông tin quan trọng.</p>
+                        <p class="mt-2 text-gray-700"><strong>Phù hợp nhất với:</strong> <span class="font-semibold text-indigo-600">Luận điểm Chính sách (Policy Claim).</span></p>
+                        <p class="text-sm text-gray-600 italic mt-1"><strong>Ví dụ:</strong> "Hãy ngừng làm điều này ngay lập tức nếu bạn muốn kênh của mình phát triển." (Tạo ra sự cấp bách phải hành động).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Key Issues -->
+        <section class="step-card" id="step3">
+            <div class="flex items-center">
+                <span class="step-icon">🔍</span>
+                <h2 class="step-title">3. Các Vấn Đề Then Chốt (Key Issues)</h2>
+            </div>
+            <p class="text-gray-600">Những câu hỏi nếu không được giải quyết thì luận điểm trung tâm sẽ bị nghi ngờ, phản đối hoặc bỏ qua.</p>
+            <div class="mt-4 grid md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-blue-800">💡 Vấn đề logic:</h4>
+                    <p class="text-blue-700">Dữ liệu, tính khả thi, nguyên lý</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg">
+                    <h4 class="font-bold text-red-800">❤️ Vấn đề cảm xúc:</h4>
+                    <p class="text-red-700">Niềm tin sai, định kiến, nỗi sợ</p>
+                </div>
+            </div>
+            <div class="mt-6 border-t pt-4">
+                <h4 class="font-bold text-gray-700">Gợi ý định dạng câu hỏi:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                    <li>Điều này có đúng trong thực tế không?</li>
+                    <li>Đúng với ai? Trong điều kiện nào?</li>
+                    <li>Nếu đúng thì tại sao người khác vẫn làm ngược lại?</li>
+                </ul>
+            </div>
+            <div class="mt-6 border-t pt-4">
+                <h3 class="font-bold text-lg text-indigo-700">CHECKLIST TÌM VẤN ĐỀ</h3>
+                <p class="text-gray-500 text-sm mb-4">Sử dụng các phương pháp sau để đảm bảo không bỏ sót các vấn đề quan trọng.</p>
+                <div class="space-y-3">
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Phân tích thuật ngữ:</strong> Các từ khóa trong luận điểm chính (ví dụ: "hệ thống", "bền vững", "cộng tác với AI") có được hiểu thống nhất không? Có định nghĩa nào gây tranh cãi không?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Xem xét bối cảnh:</strong> Tại sao vấn đề này lại nổi lên ngay bây giờ? Điều gì đã thay đổi trên thị trường, trong công nghệ, hoặc trong hành vi của khán giả?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Dùng Điểm Luận (Topoi):</strong> Áp dụng các câu hỏi chuẩn cho loại luận điểm này. Ví dụ, với luận điểm chính sách (nên làm gì đó), hãy hỏi:</p></div>
+                    <ul class="list-decimal list-inside ml-8 text-gray-600 space-y-2 mt-2">
+                        <li><strong>Vấn đề (Ill):</strong> Vấn đề hiện tại có thực sự tồn tại và nghiêm trọng không?</li>
+                        <li><strong>Trách nhiệm (Blame):</strong> Nguyên nhân gốc rễ của vấn đề là gì?</li>
+                        <li><strong>Giải pháp (Cure):</strong> Đề xuất này có thực sự giải quyết được nguyên nhân đó không?</li>
+                        <li><strong>Chi phí (Cost):</strong> Lợi ích của giải pháp có lớn hơn những rủi ro hoặc chi phí đi kèm không?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-6 border-t pt-4">
+                <h3 class="font-bold text-lg text-indigo-700">ĐÀO SÂU "NỖI ĐAU" BẰNG LÝ THUYẾT ĐIỂM DỪNG (Stasis Theory)</h3>
+                <p class="text-gray-500 text-sm mb-4">Hầu hết nội dung trên thị trường đang cạnh tranh ở cấp độ "Làm thế nào để...". Lý thuyết này giúp bạn tìm ra những cuộc tranh cãi sâu sắc hơn mà khán giả đang có trong đầu nhưng chưa ai gọi tên.</p>
+                <div class="space-y-4">
+                    <div class="stasis-level">
+                        <h4 class="font-semibold text-gray-800">1. Vấn đề Sự thật (Fact/Conjecture)</h4>
+                        <p class="text-gray-600">Nó có tồn tại không? Điều đó có thực sự xảy ra không?</p>
+                    </div>
+                    <div class="stasis-level">
+                        <h4 class="font-semibold text-gray-800">2. Vấn đề Định nghĩa (Definition)</h4>
+                        <p class="text-gray-600">Nó là gì? Chúng ta nên định nghĩa hay phân loại nó như thế nào?</p>
+                    </div>
+                    <div class="stasis-level">
+                        <h4 class="font-semibold text-gray-800">3. Vấn đề Chất lượng (Quality)</h4>
+                        <p class="text-gray-600">Nó tốt hay xấu? Mức độ nghiêm trọng ra sao?</p>
+                    </div>
+                    <div class="stasis-level">
+                        <h4 class="font-semibold text-gray-800">4. Vấn đề Hành động (Policy)</h4>
+                        <p class="text-gray-600">Chúng ta nên làm gì về nó?</p>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg text-gray-800">
+                    <p class="font-bold">Ví dụ minh họa:</p>
+                    <p class="mt-2 italic"><strong class="text-red-600">Nỗi đau bề mặt (Hành động):</strong> "Làm sao để có thêm khách hàng?"</p>
+                    <p class="mt-2 font-semibold">Đào sâu bằng Lý thuyết Điểm Dừng:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1">
+                        <li><strong class="text-blue-600">(Chất lượng):</strong> "Việc có nhiều khách hàng hơn có thực sự tốt không, hay chất lượng khách hàng mới là điều quan trọng?"<br>→ <span class="text-sm text-gray-600">Video: "Tại sao 1 khách hàng tốt còn hơn 10 khách hàng tồi."</span></li>
+                        <li><strong class="text-green-600">(Định nghĩa):</strong> "Thế nào được định nghĩa là một 'khách hàng lý tưởng'?"<br>→ <span class="text-sm text-gray-600">Video: "3 tiêu chí để nhận diện khách hàng 'trong mơ' của bạn."</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 4: Subclaims -->
+        <section class="step-card" id="step4">
+            <div class="flex items-center">
+                <span class="step-icon">🧱</span>
+                <h2 class="step-title">4. Luận Điểm Phụ (Subclaims)</h2>
+            </div>
+            <p class="text-gray-600">Là các “trụ cột” chống đỡ cho luận điểm chính – mỗi cái nên gắn với 1 Vấn Đề Then Chốt.</p>
+            <div class="mt-4 p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                <p class="text-gray-700 italic"><strong>Mẫu viết:</strong> “Một trong những lý do khiến [Luận Điểm Trung Tâm] là đúng: ...”</p>
+                <ul class="list-none mt-2 text-gray-800 font-medium">
+                    <li>Luận điểm phụ #1: ...</li>
+                    <li>Luận điểm phụ #2: ...</li>
+                    <li>Luận điểm phụ #3: ...</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Step 5: Grounds & Warrants -->
+        <section class="step-card" id="step5">
+            <div class="flex items-center">
+                <span class="step-icon">🧠</span>
+                <h2 class="step-title">5. Bằng Chứng (Grounds) & Cầu Nối Logic (Warrants)</h2>
+            </div>
+            <p class="text-gray-600 mb-4">Với mỗi Luận Điểm Phụ:</p>
+            <div class="space-y-4">
+                <div>
+                    <h4 class="font-bold text-gray-800">Bằng chứng (Ground):</h4>
+                    <p class="text-gray-600"><span class="font-semibold">Loại:</span> [ ] Thống kê / [ ] Nghiên cứu tình huống (Case Study) / [ ] Trích dẫn / [ ] Ví dụ cá nhân / [ ] Quan sát xã hội</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Cầu nối logic (Warrant):</h4>
+                    <p class="text-gray-600">Niềm tin hoặc suy luận ẩn dưới khiến bằng chứng hỗ trợ cho luận điểm phụ.</p>
+                    <p class="mt-2 text-sm italic text-indigo-700"><strong>Câu hỏi kiểm tra Cầu nối logic:</strong> Khán giả có tin điều này không? Nếu không, tôi cần chứng minh gì?</p>
+                </div>
+            </div>
+            <div class="mt-6 border-t pt-4">
+                <h3 class="font-bold text-lg text-indigo-700">CHECKLIST CHẤT LƯỢNG BẰNG CHỨNG</h3>
+                <p class="text-gray-500 text-sm mb-4">Đánh giá mỗi bằng chứng bạn chọn qua bộ lọc 7 tiêu chí này.</p>
+                <div class="space-y-3">
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Tính Liên Quan:</strong> Bằng chứng có trực tiếp chứng minh luận điểm phụ không, hay chỉ liên quan một cách gián tiếp?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Độ Tin Cậy Nguồn:</strong> Nguồn (chuyên gia, báo cáo) có uy tín, chuyên môn và không thiên vị không?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Tính Kịp Thời:</strong> Dữ liệu có còn phù hợp với bối cảnh hiện tại không hay đã lỗi thời?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Tính Đại Diện:</strong> Nghiên cứu tình huống/ví dụ có đủ điển hình hay chỉ là trường hợp ngoại lệ, cá biệt?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Khả Năng Tái Hiện:</strong> Kết quả của bằng chứng (nếu là nghiên cứu) có thể được kiểm chứng bởi người khác không?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Lý Luận Nền Tảng:</strong> Nguồn trích dẫn có giải thích cách họ đi đến kết luận không, hay chỉ đưa ra một tuyên bố suông?</p></div>
+                    <div class="checklist-item"><span class="icon">▫️</span><p><strong>Tính Súc Tích & Rõ Ràng:</strong> Bằng chứng có được trình bày một cách đơn giản, dễ hiểu không?</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 6: Refutations -->
+        <section class="step-card" id="step6">
+            <div class="flex items-center">
+                <span class="step-icon">🛡️</span>
+                <h2 class="step-title">6. Phản Bác Dự Phòng (Refutations)</h2>
+            </div>
+            <p class="text-gray-600">Dự đoán những phản bác thường gặp → hóa giải hoặc lật ngược.</p>
+            <div class="mt-4 overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="border-b-2 p-2 bg-gray-100 font-semibold text-gray-700">Phản bác</th>
+                            <th class="border-b-2 p-2 bg-gray-100 font-semibold text-gray-700">Hướng xử lý</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-2">...</td>
+                            <td class="p-2">(1) Làm yếu giả định của phản bác</td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-2">...</td>
+                            <td class="p-2">(2) Biến phản bác thành bằng chứng cho mình</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">...</td>
+                            <td class="p-2">(3) Thừa nhận – rồi đưa ra điểm lớn hơn</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-4 p-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-700 italic"><strong>Mẫu viết:</strong> “Một số người sẽ nói rằng..., nhưng họ bỏ qua một điều quan trọng: ...”</p>
+        </section>
+
+        <!-- Step 7: Strategic Arrangement -->
+        <section class="step-card" id="step7">
+            <div class="flex items-center">
+                <span class="step-icon">🧭</span>
+                <h2 class="step-title">7. Chiến Lược Sắp Xếp (Strategic Arrangement)</h2>
+            </div>
+            <p class="text-gray-600">Xác định cách sắp xếp luận điểm sao cho dòng lập luận mượt và cuốn hút.</p>
+            <div class="mt-4">
+                <h4 class="font-bold text-gray-700">Gợi ý cách sắp xếp:</h4>
+                <ul class="list-none mt-2 text-gray-600 space-y-1">
+                    <li class="flex items-center"><span class="icon text-sm mr-2">▫️</span>Dễ hiểu trước – Khó hiểu sau</li>
+                    <li class="flex items-center"><span class="icon text-sm mr-2">▫️</span>Cảm xúc → Lý trí</li>
+                    <li class="flex items-center"><span class="icon text-sm mr-2">▫️</span>Quá khứ → Hiện tại → Tương lai</li>
+                    <li class="flex items-center"><span class="icon text-sm mr-2">▫️</span>Từ xa tới gần – hoặc từ gần tới xa (không gian)</li>
+                    <li class="flex items-center"><span class="icon text-sm mr-2">▫️</span>Gắn với 5 giai đoạn nhận thức khách hàng</li>
+                    <li class="flex items-center"><span class="icon text-sm mr-2">▫️</span>Tạo nghịch lý → rồi giải thích</li>
+                </ul>
+            </div>
+            <div class="mt-6 border-t pt-4">
+                <h3 class="font-bold text-lg text-indigo-700">PHÂN TÍCH CẤU TRÚC LOGIC</h3>
+                <p class="text-gray-500 text-sm mb-4">Hiểu cấu trúc liên kết giữa các luận điểm phụ để biết điểm mạnh, điểm yếu của toàn bộ lập luận.</p>
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="font-semibold text-gray-800">Xác định cấu trúc:</h4>
+                        <p class="text-gray-600">Các luận điểm phụ được liên kết theo kiểu nào?</p>
+                        <ul class="mt-2 space-y-2">
+                            <li><strong>Đa nhánh (Multiple):</strong> Mỗi luận điểm tự đứng vững để bảo vệ luận điểm chính. <span class="text-green-600 font-medium">(Mạnh nhất, an toàn nhất)</span></li>
+                            <li><strong>Phối hợp (Coordinative):</strong> Nhiều luận điểm cần kết hợp lại mới đủ mạnh. <span class="text-yellow-600 font-medium">(Sức mạnh đến từ sự tích lũy)</span></li>
+                            <li><strong>Phụ thuộc (Subordinative):</strong> Luận điểm này dựa vào luận điểm kia như một chuỗi domino. <span class="text-red-600 font-medium">(Dễ bị bẻ gãy nhất)</span></li>
+                        </ul>
+                    </div>
+                    <p class="mt-2 text-sm italic text-indigo-700"><strong>Câu hỏi kiểm tra:</strong> Điểm yếu nhất trong chuỗi logic của tôi nằm ở đâu? Nếu đối thủ bẻ gãy được một luận điểm phụ, toàn bộ lập luận có sụp đổ không?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 8: Summary -->
+        <section class="step-card" id="step8">
+            <div class="flex items-center">
+                <span class="step-icon">🧩</span>
+                <h2 class="step-title">8. Tóm Tắt Brief (Summary – 150–200 từ)</h2>
+            </div>
+            <p class="text-gray-600">Viết đoạn tổng hợp kết nối mọi phần ở trên – có thể dùng để viết content, outline video, hoặc brief cho team.</p>
+            <div class="mt-4">
+                <h4 class="font-bold text-gray-700">Yêu cầu:</h4>
+                <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+                    <li>Có cảm xúc (cao trào, nghịch lý, gợi tò mò)</li>
+                    <li>Rõ ràng quan điểm</li>
+                    <li>Có gợi ý Điểm Móc (Hook Point)</li>
+                    <li>Có nội dung phản biện rõ ràng</li>
+                    <li>Gợi ý Lời Kêu Gọi Hành Động (CTA)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Step 9: Argument Map -->
+        <section class="step-card" id="step9">
+            <div class="flex items-center">
+                <span class="step-icon">🧮</span>
+                <h2 class="step-title">9. Lưu Đồ Lập Luận (Argument Map)</h2>
+            </div>
+            <p class="text-gray-600">Vẽ lại sơ đồ để nhìn rõ mạch lập luận & điểm yếu. Sơ đồ này giúp trực quan hóa cấu trúc logic đã xác định ở Bước 7.</p>
+            
+            <div class="mt-4">
+                <h4 class="font-bold text-gray-700">Lưu đồ tổng quát:</h4>
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg argument-map">
+                    <h4 class="font-bold text-gray-800">Luận Điểm Trung Tâm</h4>
+                    <ul>
+                        <li>
+                            <span class="font-semibold">Luận Điểm Phụ #1</span>
+                            <ul>
+                                <li>Bằng Chứng 1a</li>
+                                <li>Cầu Nối Logic</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Luận Điểm Phụ #2</span>
+                            <ul>
+                                <li>Bằng Chứng 2a</li>
+                                <li>Phản Bác</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="font-semibold">Luận Điểm Phụ #3</span>
+                            <ul>
+                                <li>Bằng Chứng 3a</li>
+                                <li>Cầu Nối Logic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                 <p class="mt-2 text-sm text-gray-500 italic"><strong>Ghi chú:</strong> Sơ đồ này giúp trực quan hóa cấu trúc logic (Đa nhánh, Phối hợp, Phụ thuộc) đã xác định ở Bước 7, từ đó giúp bạn thấy rõ "mắt xích yếu" nhất trong lập luận của mình.</p>
+            </div>
+
+            <div class="mt-6 border-t pt-4">
+                <h4 class="font-bold text-gray-700">Ví dụ Lưu đồ chi tiết dạng Markdown:</h4>
+                <div class="code-block mt-2">
+<pre><code>
+Luận Điểm Trung Tâm: "Tập trung vào nội dung chuyên sâu sẽ mang lại khách hàng chất lượng hơn chạy theo trend."
+├── Luận Điểm Phụ 1: "Nội dung chuyên sâu xây dựng uy tín (authority) bền vững."
+│   ├── Bằng chứng 1a: "Case study của X, sau 6 tháng làm nội dung chuyên sâu, tỷ lệ khách hàng quay lại tăng 50%."
+│   └── Phản bác dự phòng 1b: "Nhiều người sẽ nói: 'Làm nội dung chuyên sâu tốn thời gian'. Nhưng đây là khoản đầu tư vào uy tín, không phải chi phí."
+│
+├── Luận Điểm Phụ 2: "Nội dung chuyên sâu thu hút đúng đối tượng khách hàng lý tưởng."
+│   └── Bằng chứng 2a: "Dữ liệu cho thấy người xem hết video dài có khả năng chuyển đổi cao hơn 3 lần."
+│
+└── Luận Điểm Phụ 3: "Nội dung chuyên sâu có vòng đời dài hơn nội dung bắt trend."
+    ├── Bằng chứng 3a: "Video phân tích của chúng ta từ năm ngoái vẫn mang lại lead, trong khi video trend đã 'chết' sau 48h."
+    ├── Phản bác dự phòng 3b: "Phản bác 'Ngành của tôi cần sự vui vẻ, bắt trend'."
+    └── Phản bác dự phòng 3c: "Phản bác 'Làm sao cạnh tranh SEO với các bài viết chuyên sâu của đối thủ lớn?'."
+</code></pre>
+                </div>
+            </div>
+
+            <div class="mt-6 border-t pt-4">
+                 <h4 class="font-bold text-gray-700">Minh họa các cấu trúc lập luận:</h4>
+                 <div class="diagram-container">
+                    <div class="diagram">
+                        <h5 class="font-semibold">1. Đa nhánh (Multiple)</h5>
+                        <svg width="200" height="180" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4B5563" /></marker></defs><rect x="5" y="10" width="80" height="25" fill="#FFFBEB" stroke="#FBBF24"/><text x="45" y="27" text-anchor="middle" font-size="10">LP Phụ 1</text><rect x="5" y="50" width="80" height="25" fill="#FFFBEB" stroke="#FBBF24"/><text x="45" y="67" text-anchor="middle" font-size="10">LP Phụ 2</text><rect x="5" y="90" width="80" height="25" fill="#FFFBEB" stroke="#FBBF24"/><text x="45" y="107" text-anchor="middle" font-size="10">LP Phụ 3</text><rect x="115" y="50" width="80" height="25" fill="#E0E7FF" stroke="#6366F1"/><text x="155" y="67" text-anchor="middle" font-size="10">Luận Điểm</text><path d="M85 22.5 L115 62.5" stroke="black" marker-end="url(#arrow)"/><path d="M85 62.5 L115 62.5" stroke="black" marker-end="url(#arrow)"/><path d="M85 102.5 L115 62.5" stroke="black" marker-end="url(#arrow)"/></svg>
+                    </div>
+                    <div class="diagram">
+                        <h5 class="font-semibold">2. Phối hợp (Coordinative)</h5>
+                        <svg width="200" height="180" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="80" height="25" fill="#FFFBEB" stroke="#FBBF24"/><text x="45" y="27" text-anchor="middle" font-size="10">LP Phụ 1</text><rect x="5" y="50" width="80" height="25" fill="#FFFBEB" stroke="#FBBF24"/><text x="45" y="67" text-anchor="middle" font-size="10">LP Phụ 2</text><rect x="5" y="90" width="80" height="25" fill="#FFFBEB" stroke="#FBBF24"/><text x="45" y="107" text-anchor="middle" font-size="10">LP Phụ 3</text><rect x="115" y="50" width="80" height="25" fill="#E0E7FF" stroke="#6366F1"/><text x="155" y="67" text-anchor="middle" font-size="10">Luận Điểm</text><path d="M85 22.5 L100 22.5 L100 102.5 L85 102.5" stroke="black" fill="none"/><path d="M100 62.5 L115 62.5" stroke="black" marker-end="url(#arrow)"/></svg>
+                    </div>
+                    <div class="diagram">
+                        <h5 class="font-semibold">3. Phụ thuộc (Subordinative)</h5>
+                        <svg width="120" height="180" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="100" height="30" fill="#E0E7FF" stroke="#6366F1"/><text x="60" y="28" text-anchor="middle" font-size="10">Luận Điểm</text><rect x="10" y="60" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/><text x="60" y="78" text-anchor="middle" font-size="10">LP Phụ 1</text><rect x="10" y="110" width="100" height="30" fill="#FFFBEB" stroke="#FBBF24"/><text x="60" y="128" text-anchor="middle" font-size="10">LP Phụ 2</text><path d="M60 40 L60 60" stroke="black" marker-end="url(#arrow)"/><path d="M60 90 L60 110" stroke="black" marker-end="url(#arrow)"/></svg>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Step 10: CTA -->
+        <section class="step-card" id="step10">
+            <div class="flex items-center">
+                <span class="step-icon">📌</span>
+                <h2 class="step-title">10. Lời Kêu Gọi Hành Động (CTA): Mở Vòng Lặp & Dẫn Dắt</h2>
+            </div>
+            <p class="text-gray-600">Trên mạng xã hội, mục tiêu không chỉ là bán hàng. Một Lời Kêu Gọi Hành Động (CTA) thông minh sẽ khơi gợi tò mò, mời gọi tranh luận và dẫn dắt khán giả xem video tiếp theo, giúp xây dựng cộng đồng và tăng thời gian xem.</p>
+            <div class="mt-6 space-y-6">
+                <div>
+                    <h4 class="font-bold text-red-700">CTA Vòng Lặp Đóng (Closed Loop)</h4>
+                    <p class="text-gray-600 text-sm">Mục tiêu: Chuyển đổi trực tiếp, kết thúc cuộc trò chuyện.</p>
+                    <div class="mt-2 p-3 bg-red-50 border-l-4 border-red-500 text-red-800 rounded-r-lg">
+                        <strong>Ví dụ:</strong> “Khóa học của tôi sẽ giải quyết vấn đề này. Mua ngay tại link bio.”
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-green-700">CTA Vòng Lặp Mở (Open Loop)</h4>
+                    <p class="text-gray-600 text-sm">Mục tiêu: Khơi gợi tò mò, giữ chân khán giả, xây dựng cộng đồng.</p>
+                    <div class="mt-4">
+                        <h5 class="font-semibold text-gray-800">Loại 1: CTA Tương tác</h5>
+                        <p class="text-gray-600 text-sm mb-2">Mời gọi khán giả tham gia vào cuộc tranh luận.</p>
+                        <div class="p-3 bg-green-50 border-l-4 border-green-500 text-green-800 rounded-r-lg">
+                            <strong>Ví dụ:</strong> “Đó là quan điểm của tôi. Còn bạn thì sao? Bình luận góc nhìn của bạn ở dưới nhé.”
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h5 class="font-semibold text-gray-800">Loại 2: CTA Chuyển tiếp</h5>
+                        <p class="text-gray-600 text-sm mb-2">Dẫn dắt khán giả đến với nội dung tiếp theo trong chuỗi của bạn.</p>
+                        <div class="p-3 bg-indigo-50 border-l-4 border-indigo-500 text-indigo-800 rounded-r-lg">
+                            <strong>Ví dụ:</strong> “Tôi vừa chỉ ra 3 sai lầm, nhưng sai lầm thứ 4 mới là thứ 'chí mạng' nhất. Follow để xem video sau nhé!”
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <a href="https://lehuutuyen.com/?utm_source=tuyen.co-resource-hub&utm_medium=global-menu-cta&utm_campaign=lead-from-resource" target="_blank" rel="noopener noreferrer" class="flex items-center mb-4">
+                        <div class="text-3xl font-extrabold text-orange-500">
+                            FLOWMAKER<span class="align-top text-lg font-normal">™</span>
+                        </div>
+                    </a>
+                    <p class="text-lg italic text-gray-400">don't Sell. Just Flow.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Về tác giả: Lê Hữu Tuyến</h3>
+                    <p class="text-gray-300 mb-4">
+                        Lê Hữu Tuyến (1987) là một Copywriter chuyên nghiệp và Marketer với hơn 10 năm kinh nghiệm, hiện đang sinh sống và làm việc tại TPHCM. Với chuyên môn sâu về tâm lý học và chiến lược Marketing Phản Hồi Trực Tiếp, anh tập trung vào việc xây dựng các hệ thống kinh doanh hiệu quả, thay vì chỉ bán kiến thức đơn thuần.
+                    </p>
+                    <p class="text-gray-300 mb-6 italic">
+                        Triết lý của anh là: "Người làm kinh doanh phải là người tự viết được quảng cáo chuyển đổi cao cho chính mình". Công cụ này là một phần trong nỗ lực chia sẻ những kiến thức chuyên sâu đó.
+                    </p>
+                    <a href="https://tuyen.biz/cafe" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-500 text-gray-900 font-bold py-2 px-5 rounded-lg hover:bg-yellow-400 transition-colors duration-300">
+                        ☕ Mời Tuyến Cốc Cafe
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                <p>© 2025 FLOWMAKER™. Mọi quyền được bảo lưu.</p>
+                <p class="mt-1">Công cụ được biên soạn bởi Lê Hữu Tuyến cho mục đích học tập và nghiên cứu.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
